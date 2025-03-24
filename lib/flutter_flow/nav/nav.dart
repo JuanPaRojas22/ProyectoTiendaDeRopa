@@ -93,6 +93,21 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: LoginWidget.routeName,
           path: LoginWidget.routePath,
           builder: (context, params) => LoginWidget(),
+        ),
+        FFRoute(
+          name: SplashWidget.routeName,
+          path: SplashWidget.routePath,
+          builder: (context, params) => SplashWidget(),
+        ),
+        FFRoute(
+          name: OlvidoContrasenaWidget.routeName,
+          path: OlvidoContrasenaWidget.routePath,
+          builder: (context, params) => OlvidoContrasenaWidget(),
+        ),
+        FFRoute(
+          name: OlvidoContrasenaMensajeWidget.routeName,
+          path: OlvidoContrasenaMensajeWidget.routePath,
+          builder: (context, params) => OlvidoContrasenaMensajeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
