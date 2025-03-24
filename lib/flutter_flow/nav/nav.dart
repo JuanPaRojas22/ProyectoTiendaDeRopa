@@ -108,6 +108,61 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: OlvidoContrasenaMensajeWidget.routeName,
           path: OlvidoContrasenaMensajeWidget.routePath,
           builder: (context, params) => OlvidoContrasenaMensajeWidget(),
+        ),
+        FFRoute(
+          name: CategoriasWidget.routeName,
+          path: CategoriasWidget.routePath,
+          builder: (context, params) => CategoriasWidget(),
+        ),
+        FFRoute(
+          name: AbrigosHombresWidget.routeName,
+          path: AbrigosHombresWidget.routePath,
+          builder: (context, params) => AbrigosHombresWidget(),
+        ),
+        FFRoute(
+          name: PantalonesHombresWidget.routeName,
+          path: PantalonesHombresWidget.routePath,
+          builder: (context, params) => PantalonesHombresWidget(),
+        ),
+        FFRoute(
+          name: ShortsHombresWidget.routeName,
+          path: ShortsHombresWidget.routePath,
+          builder: (context, params) => ShortsHombresWidget(),
+        ),
+        FFRoute(
+          name: CamisasHombresWidget.routeName,
+          path: CamisasHombresWidget.routePath,
+          builder: (context, params) => CamisasHombresWidget(),
+        ),
+        FFRoute(
+          name: ZapatosHombresWidget.routeName,
+          path: ZapatosHombresWidget.routePath,
+          builder: (context, params) => ZapatosHombresWidget(),
+        ),
+        FFRoute(
+          name: AbrigosMujeresWidget.routeName,
+          path: AbrigosMujeresWidget.routePath,
+          builder: (context, params) => AbrigosMujeresWidget(),
+        ),
+        FFRoute(
+          name: CamisasMujeresWidget.routeName,
+          path: CamisasMujeresWidget.routePath,
+          builder: (context, params) => CamisasMujeresWidget(),
+        ),
+        FFRoute(
+          name: PantalonesMujeresWidget.routeName,
+          path: PantalonesMujeresWidget.routePath,
+          builder: (context, params) => PantalonesMujeresWidget(),
+        ),
+        FFRoute(
+          name: ShortsMujeresWidget.routeName,
+          path: ShortsMujeresWidget.routePath,
+          builder: (context, params) => ShortsMujeresWidget(),
+        ),
+        FFRoute(
+          name: ZapatosMujeresWidget.routeName,
+          path: ZapatosMujeresWidget.routePath,
+          builder: (context, params) => ZapatosMujeresWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
