@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'tarjeta_pago_model.dart';
 export 'tarjeta_pago_model.dart';
@@ -456,8 +457,9 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               FFButtonWidget(
-                                onPressed: () {
-                                  print('Button pressed ...');
+                                onPressed: () async {
+                                  context
+                                      .pushNamed(PagoExitosoWidget.routeName);
                                 },
                                 text: 'Confirmar pago',
                                 options: FFButtonOptions(

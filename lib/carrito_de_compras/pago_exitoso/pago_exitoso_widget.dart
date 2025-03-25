@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'pago_exitoso_model.dart';
 export 'pago_exitoso_model.dart';
@@ -63,7 +64,7 @@ class _PagoExitosoWidgetState extends State<PagoExitosoWidget> {
                       size: 25.0,
                     ),
                     onPressed: () async {
-                      context.pop();
+                      context.pushNamed(CarritoVacioWidget.routeName);
                     },
                   ),
                 ],
@@ -199,8 +200,8 @@ class _PagoExitosoWidgetState extends State<PagoExitosoWidget> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        context.pushNamed(CategoriasWidget.routeName);
                       },
                       text: 'Inicio',
                       options: FFButtonOptions(

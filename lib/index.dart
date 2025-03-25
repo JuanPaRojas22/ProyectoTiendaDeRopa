@@ -44,3 +44,4 @@ export '/carrito_de_compras/pago_exitoso/pago_exitoso_widget.dart'
 export '/carrito_de_compras/tarjeta_pago/tarjeta_pago_widget.dart'
     show TarjetaPagoWidget;
 export '/login/registro/registro_widget.dart' show RegistroWidget;
+export '/profile_page/profile_page_widget.dart' show ProfilePageWidget;

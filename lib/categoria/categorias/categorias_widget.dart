@@ -74,26 +74,53 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
           actions: [
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-              child: Icon(
-                Icons.library_books_rounded,
-                color: FlutterFlowTheme.of(context).primaryText,
-                size: 30.0,
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(OrdenDetallesWidget.routeName);
+                },
+                child: Icon(
+                  Icons.library_books_rounded,
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  size: 30.0,
+                ),
               ),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-              child: Icon(
-                Icons.shopping_cart,
-                color: FlutterFlowTheme.of(context).primaryText,
-                size: 30.0,
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(CarritoVacioWidget.routeName);
+                },
+                child: Icon(
+                  Icons.shopping_cart,
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  size: 30.0,
+                ),
               ),
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 0.0),
-              child: Icon(
-                Icons.person,
-                color: FlutterFlowTheme.of(context).primaryText,
-                size: 30.0,
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  context.pushNamed(ProfilePageWidget.routeName);
+                },
+                child: Icon(
+                  Icons.person,
+                  color: FlutterFlowTheme.of(context).primaryText,
+                  size: 30.0,
+                ),
               ),
             ),
           ],

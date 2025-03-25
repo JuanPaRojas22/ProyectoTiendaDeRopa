@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'pago_exitoso_widget.dart' show PagoExitosoWidget;
+import 'ordenes_btn_widget.dart' show OrdenesBtnWidget;
 import 'package:flutter/material.dart';
 
-class PagoExitosoModel extends FlutterFlowModel<PagoExitosoWidget> {
+class OrdenesBtnModel extends FlutterFlowModel<OrdenesBtnWidget> {
   @override
   void initState(BuildContext context) {}
 
