@@ -33,3 +33,13 @@ export '/orders/orden_detalles/orden_detalles_widget.dart'
 export '/orders/orden_estado/orden_estado_widget.dart' show OrdenEstadoWidget;
 export '/categoria/no_encontro_categoria_buscar/no_encontro_categoria_buscar_widget.dart'
     show NoEncontroCategoriaBuscarWidget;
+export '/carrito_de_compras/carrito_vacio/carrito_vacio_widget.dart'
+    show CarritoVacioWidget;
+export '/carrito_de_compras/carrito_lista/carrito_lista_widget.dart'
+    show CarritoListaWidget;
+export '/carrito_de_compras/talla_ropa/talla_ropa_widget.dart'
+    show TallaRopaWidget;
+export '/carrito_de_compras/pago_exitoso/pago_exitoso_widget.dart'
+    show PagoExitosoWidget;
+export '/carrito_de_compras/tarjeta_pago/tarjeta_pago_widget.dart'
+    show TarjetaPagoWidget;

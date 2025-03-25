@@ -183,6 +183,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: NoEncontroCategoriaBuscarWidget.routeName,
           path: NoEncontroCategoriaBuscarWidget.routePath,
           builder: (context, params) => NoEncontroCategoriaBuscarWidget(),
+        ),
+        FFRoute(
+          name: CarritoVacioWidget.routeName,
+          path: CarritoVacioWidget.routePath,
+          builder: (context, params) => CarritoVacioWidget(),
+        ),
+        FFRoute(
+          name: CarritoListaWidget.routeName,
+          path: CarritoListaWidget.routePath,
+          builder: (context, params) => CarritoListaWidget(),
+        ),
+        FFRoute(
+          name: TallaRopaWidget.routeName,
+          path: TallaRopaWidget.routePath,
+          builder: (context, params) => TallaRopaWidget(),
+        ),
+        FFRoute(
+          name: PagoExitosoWidget.routeName,
+          path: PagoExitosoWidget.routePath,
+          builder: (context, params) => PagoExitosoWidget(),
+        ),
+        FFRoute(
+          name: TarjetaPagoWidget.routeName,
+          path: TarjetaPagoWidget.routePath,
+          builder: (context, params) => TarjetaPagoWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
