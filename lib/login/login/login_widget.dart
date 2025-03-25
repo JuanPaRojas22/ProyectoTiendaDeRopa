@@ -146,32 +146,32 @@ class _LoginWidgetState extends State<LoginWidget>
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 44.0, 0.0, 0.0),
-                        child: Container(
-                          width: double.infinity,
-                          constraints: BoxConstraints(
-                            maxWidth: 602.0,
+                      Container(
+                        width: double.infinity,
+                        constraints: BoxConstraints(
+                          maxWidth: 602.0,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Color(0xDCDFDFDF),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(16.0),
+                            bottomRight: Radius.circular(16.0),
+                            topLeft: Radius.circular(0.0),
+                            topRight: Radius.circular(0.0),
                           ),
-                          decoration: BoxDecoration(
-                            color: Color(0xDCDFDFDF),
-                            borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(16.0),
-                              bottomRight: Radius.circular(16.0),
-                              topLeft: Radius.circular(0.0),
-                              topRight: Radius.circular(0.0),
-                            ),
-                          ),
+                        ),
+                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        child: Align(
                           alignment: AlignmentDirectional(-1.0, 0.0),
-                          child: Align(
-                            alignment: AlignmentDirectional(-1.0, 0.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Row(
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 30.0, 0.0, 0.0),
+                                child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
@@ -189,8 +189,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                     ),
                                   ],
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -541,7 +541,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     }
 
                                                     context.goNamedAuth(
-                                                        HomePageWidget
+                                                        CategoriasWidget
                                                             .routeName,
                                                         context.mounted);
                                                   },
@@ -1198,7 +1198,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     }
 
                                                     context.goNamedAuth(
-                                                        HomePageWidget
+                                                        CategoriasWidget
                                                             .routeName,
                                                         context.mounted);
                                                   },

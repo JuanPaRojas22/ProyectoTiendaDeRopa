@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'splash_widget.dart' show SplashWidget;
+import 'orden_detalles_widget.dart' show OrdenDetallesWidget;
 import 'package:flutter/material.dart';
 
-class SplashModel extends FlutterFlowModel<SplashWidget> {
+class OrdenDetallesModel extends FlutterFlowModel<OrdenDetallesWidget> {
   @override
   void initState(BuildContext context) {}
 

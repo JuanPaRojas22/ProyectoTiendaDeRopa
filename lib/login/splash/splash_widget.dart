@@ -1,4 +1,6 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/index.dart';
 import 'package:flutter/material.dart';
 import 'splash_model.dart';
 export 'splash_model.dart';
@@ -40,27 +42,74 @@ class _SplashWidgetState extends State<SplashWidget> {
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xD3FFFFFF),
+        backgroundColor: Color(0xFFD9D9D9),
         body: SafeArea(
           top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
+          child: Container(
+            width: double.infinity,
+            constraints: BoxConstraints(
+              maxWidth: 602.0,
+            ),
+            decoration: BoxDecoration(
+              color: Color(0xFFD9D9D9),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(16.0),
+                bottomRight: Radius.circular(16.0),
+                topLeft: Radius.circular(0.0),
+                topRight: Radius.circular(0.0),
+              ),
+            ),
+            alignment: AlignmentDirectional(-1.0, 0.0),
+            child: Align(
+              alignment: AlignmentDirectional(-1.0, 0.0),
+              child: Column(
                 mainAxisSize: MainAxisSize.max,
-                children: [],
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed(LoginWidget.routeName);
+                          },
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.asset(
+                              'assets/images/imagen.png',
+                              width: 500.0,
+                              height: 200.0,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Text(
+                      'Bienvenido a Vibra Urbana',
+                      textAlign: TextAlign.start,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Inter',
+                            fontSize: 20.0,
+                            letterSpacing: 0.0,
+                            fontWeight: FontWeight.bold,
+                            fontStyle: FontStyle.italic,
+                          ),
+                    ),
+                  ),
+                ],
               ),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(8.0),
-                child: Image.asset(
-                  'assets/images/imagen.png',
-                  width: 1000.0,
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),

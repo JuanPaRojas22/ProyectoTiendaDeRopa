@@ -76,13 +76,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       navigatorKey: appNavigatorKey,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? HomePageWidget() : LoginWidget(),
+          appStateNotifier.loggedIn ? CategoriasWidget() : SplashWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? HomePageWidget() : LoginWidget(),
+              appStateNotifier.loggedIn ? CategoriasWidget() : SplashWidget(),
         ),
         FFRoute(
           name: HomePageWidget.routeName,
@@ -115,29 +115,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CategoriasWidget(),
         ),
         FFRoute(
-          name: AbrigosHombresWidget.routeName,
-          path: AbrigosHombresWidget.routePath,
-          builder: (context, params) => AbrigosHombresWidget(),
-        ),
-        FFRoute(
-          name: PantalonesHombresWidget.routeName,
-          path: PantalonesHombresWidget.routePath,
-          builder: (context, params) => PantalonesHombresWidget(),
-        ),
-        FFRoute(
-          name: ShortsHombresWidget.routeName,
-          path: ShortsHombresWidget.routePath,
-          builder: (context, params) => ShortsHombresWidget(),
-        ),
-        FFRoute(
-          name: CamisasHombresWidget.routeName,
-          path: CamisasHombresWidget.routePath,
-          builder: (context, params) => CamisasHombresWidget(),
-        ),
-        FFRoute(
-          name: ZapatosHombresWidget.routeName,
-          path: ZapatosHombresWidget.routePath,
-          builder: (context, params) => ZapatosHombresWidget(),
+          name: AbrigosHombreWidget.routeName,
+          path: AbrigosHombreWidget.routePath,
+          builder: (context, params) => AbrigosHombreWidget(),
         ),
         FFRoute(
           name: AbrigosMujeresWidget.routeName,
@@ -163,6 +143,46 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: ZapatosMujeresWidget.routeName,
           path: ZapatosMujeresWidget.routePath,
           builder: (context, params) => ZapatosMujeresWidget(),
+        ),
+        FFRoute(
+          name: CamisasHombreWidget.routeName,
+          path: CamisasHombreWidget.routePath,
+          builder: (context, params) => CamisasHombreWidget(),
+        ),
+        FFRoute(
+          name: PantalonesHombreWidget.routeName,
+          path: PantalonesHombreWidget.routePath,
+          builder: (context, params) => PantalonesHombreWidget(),
+        ),
+        FFRoute(
+          name: ShortsHombreWidget.routeName,
+          path: ShortsHombreWidget.routePath,
+          builder: (context, params) => ShortsHombreWidget(),
+        ),
+        FFRoute(
+          name: ZapatosHombreWidget.routeName,
+          path: ZapatosHombreWidget.routePath,
+          builder: (context, params) => ZapatosHombreWidget(),
+        ),
+        FFRoute(
+          name: OrdenesWidget.routeName,
+          path: OrdenesWidget.routePath,
+          builder: (context, params) => OrdenesWidget(),
+        ),
+        FFRoute(
+          name: OrdenDetallesWidget.routeName,
+          path: OrdenDetallesWidget.routePath,
+          builder: (context, params) => OrdenDetallesWidget(),
+        ),
+        FFRoute(
+          name: OrdenEstadoWidget.routeName,
+          path: OrdenEstadoWidget.routePath,
+          builder: (context, params) => OrdenEstadoWidget(),
+        ),
+        FFRoute(
+          name: NoEncontroCategoriaBuscarWidget.routeName,
+          path: NoEncontroCategoriaBuscarWidget.routePath,
+          builder: (context, params) => NoEncontroCategoriaBuscarWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -331,7 +351,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
-            return '/login';
+            return '/splash';
           }
           return null;
         },

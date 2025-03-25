@@ -42,9 +42,9 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFD9D9D9),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFFD9D9D9),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -57,7 +57,7 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
             size: 30.0,
           ),
           onPressed: () async {
-            context.pushNamed(LoginWidget.routeName);
+            context.safePop();
           },
         ),
         actions: [],
@@ -102,22 +102,6 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
                             Icons.arrow_back_rounded,
                             color: Color(0xFF15161E),
                             size: 24.0,
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              12.0, 0.0, 0.0, 0.0),
-                          child: Text(
-                            'Back',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Plus Jakarta Sans',
-                                  color: Color(0xFF15161E),
-                                  fontSize: 14.0,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
                           ),
                         ),
                       ],

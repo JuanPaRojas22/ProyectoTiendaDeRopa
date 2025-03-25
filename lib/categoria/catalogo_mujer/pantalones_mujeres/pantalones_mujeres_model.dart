@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'splash_widget.dart' show SplashWidget;
+import 'pantalones_mujeres_widget.dart' show PantalonesMujeresWidget;
 import 'package:flutter/material.dart';
 
-class SplashModel extends FlutterFlowModel<SplashWidget> {
+class PantalonesMujeresModel extends FlutterFlowModel<PantalonesMujeresWidget> {
   @override
   void initState(BuildContext context) {}
 

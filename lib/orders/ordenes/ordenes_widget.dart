@@ -3,30 +3,28 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
-import 'olvido_contrasena_mensaje_model.dart';
-export 'olvido_contrasena_mensaje_model.dart';
+import 'ordenes_model.dart';
+export 'ordenes_model.dart';
 
-class OlvidoContrasenaMensajeWidget extends StatefulWidget {
-  const OlvidoContrasenaMensajeWidget({super.key});
+class OrdenesWidget extends StatefulWidget {
+  const OrdenesWidget({super.key});
 
-  static String routeName = 'OlvidoContrasena_Mensaje';
-  static String routePath = '/olvidoContrasenaMensaje';
+  static String routeName = 'Ordenes';
+  static String routePath = '/ordenes';
 
   @override
-  State<OlvidoContrasenaMensajeWidget> createState() =>
-      _OlvidoContrasenaMensajeWidgetState();
+  State<OrdenesWidget> createState() => _OrdenesWidgetState();
 }
 
-class _OlvidoContrasenaMensajeWidgetState
-    extends State<OlvidoContrasenaMensajeWidget> {
-  late OlvidoContrasenaMensajeModel _model;
+class _OrdenesWidgetState extends State<OrdenesWidget> {
+  late OrdenesModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => OlvidoContrasenaMensajeModel());
+    _model = createModel(context, () => OrdenesModel());
   }
 
   @override
@@ -45,7 +43,7 @@ class _OlvidoContrasenaMensajeWidgetState
       },
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: Color(0xFFD9D9D9),
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
           child: Align(
@@ -72,7 +70,7 @@ class _OlvidoContrasenaMensajeWidgetState
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(8.0),
                               child: Image.asset(
-                                'assets/images/enviar-correo.png',
+                                'assets/images/carro-de-la-carretilla.png',
                                 width: 200.0,
                                 height: 200.0,
                                 fit: BoxFit.cover,
@@ -91,7 +89,7 @@ class _OlvidoContrasenaMensajeWidgetState
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: Text(
-                          'Le enviaremos un correo \npara restablecer su contraseña',
+                          'No hay nada en el carrito',
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -111,9 +109,9 @@ class _OlvidoContrasenaMensajeWidgetState
                           EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed(LoginWidget.routeName);
+                          context.pushNamed(CategoriasWidget.routeName);
                         },
-                        text: 'Volver a pagina de inicio',
+                        text: 'Volver a categorias',
                         options: FFButtonOptions(
                           width: 300.0,
                           height: 50.0,
