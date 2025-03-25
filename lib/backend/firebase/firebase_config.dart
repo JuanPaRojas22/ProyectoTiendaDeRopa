@@ -5,12 +5,12 @@ Future initFirebase() async {
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: FirebaseOptions(
-            apiKey: "AIzaSyB1O2aRSmlu7__3zr7xJ57em0kNg8Z6Fxo",
-            authDomain: "proyecto-emprendimiento-mcjzrd.firebaseapp.com",
-            projectId: "proyecto-emprendimiento-mcjzrd",
-            storageBucket: "proyecto-emprendimiento-mcjzrd.firebasestorage.app",
-            messagingSenderId: "222276002542",
-            appId: "1:222276002542:web:a027a6b9b470ecb65fc9ff"));
+            apiKey: "AIzaSyCSmmBHI6cb4pht-p2pa4eByoT2N2mGyPY",
+            authDomain: "tiendaderopaproyecto-e5005.firebaseapp.com",
+            projectId: "tiendaderopaproyecto-e5005",
+            storageBucket: "tiendaderopaproyecto-e5005.firebasestorage.app",
+            messagingSenderId: "342976761211",
+            appId: "1:342976761211:web:0ac30e6fdfbe92fdda01de"));
   } else {
     await Firebase.initializeApp();
   }

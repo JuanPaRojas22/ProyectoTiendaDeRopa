@@ -29,6 +29,8 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
 
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

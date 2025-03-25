@@ -40,6 +40,8 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
 
     _model.talla2XLAddressTextController ??= TextEditingController();
     _model.talla2XLAddressFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

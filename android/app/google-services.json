@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "222276002542",
-    "project_id": "proyecto-emprendimiento-mcjzrd",
-    "storage_bucket": "proyecto-emprendimiento-mcjzrd.firebasestorage.app"
+    "project_number": "342976761211",
+    "project_id": "tiendaderopaproyecto-e5005",
+    "storage_bucket": "tiendaderopaproyecto-e5005.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:222276002542:android:5694d7eea0f8fe295fc9ff",
+        "mobilesdk_app_id": "1:342976761211:android:de97460f35e25139da01de",
         "android_client_info": {
           "package_name": "com.mycompany.proyectoemprendimientoderopa"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAIrXR92figieurcu-GjyW8c6DuC0XUoe0"
+          "current_key": "AIzaSyAW23hVkU_akIulF7gz7g6bpUZE5mEVvNg"
         }
       ],
       "services": {

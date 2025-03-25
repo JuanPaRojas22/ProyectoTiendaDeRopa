@@ -208,6 +208,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: TarjetaPagoWidget.routeName,
           path: TarjetaPagoWidget.routePath,
           builder: (context, params) => TarjetaPagoWidget(),
+        ),
+        FFRoute(
+          name: RegistroWidget.routeName,
+          path: RegistroWidget.routePath,
+          builder: (context, params) => RegistroWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -326,6 +331,7 @@ class FFParameters {
     String paramName,
     ParamType type, {
     bool isList = false,
+    List<String>? collectionNamePath,
   }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -343,6 +349,7 @@ class FFParameters {
       param,
       type,
       isList,
+      collectionNamePath: collectionNamePath,
     );
   }
 }

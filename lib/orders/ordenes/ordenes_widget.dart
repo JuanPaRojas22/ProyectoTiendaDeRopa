@@ -25,6 +25,8 @@ class _OrdenesWidgetState extends State<OrdenesWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => OrdenesModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

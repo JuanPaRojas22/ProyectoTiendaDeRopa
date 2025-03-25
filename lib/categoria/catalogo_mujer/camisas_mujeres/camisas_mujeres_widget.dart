@@ -24,6 +24,8 @@ class _CamisasMujeresWidgetState extends State<CamisasMujeresWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CamisasMujeresModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

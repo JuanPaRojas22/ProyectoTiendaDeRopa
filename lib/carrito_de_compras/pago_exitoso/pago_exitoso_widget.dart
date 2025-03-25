@@ -25,6 +25,8 @@ class _PagoExitosoWidgetState extends State<PagoExitosoWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PagoExitosoModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

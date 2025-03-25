@@ -27,6 +27,8 @@ class _OlvidoContrasenaMensajeWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => OlvidoContrasenaMensajeModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

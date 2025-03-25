@@ -24,6 +24,8 @@ class _ZapatosMujeresWidgetState extends State<ZapatosMujeresWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ZapatosMujeresModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

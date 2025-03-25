@@ -25,6 +25,8 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TarjetaPagoModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

@@ -24,6 +24,8 @@ class _PantalonesHombreWidgetState extends State<PantalonesHombreWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PantalonesHombreModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

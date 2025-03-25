@@ -25,6 +25,8 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CarritoListaModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

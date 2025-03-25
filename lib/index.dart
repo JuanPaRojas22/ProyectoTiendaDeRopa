@@ -1,5 +1,5 @@
 // Export pages
-export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
+export '/home_page/home_page_widget.dart' show HomePageWidget;
 export '/login/login/login_widget.dart' show LoginWidget;
 export '/login/splash/splash_widget.dart' show SplashWidget;
 export '/login/olvido_contrasena/olvido_contrasena_widget.dart'
@@ -43,3 +43,4 @@ export '/carrito_de_compras/pago_exitoso/pago_exitoso_widget.dart'
     show PagoExitosoWidget;
 export '/carrito_de_compras/tarjeta_pago/tarjeta_pago_widget.dart'
     show TarjetaPagoWidget;
+export '/login/registro/registro_widget.dart' show RegistroWidget;

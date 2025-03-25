@@ -31,6 +31,8 @@ class _NoEncontroCategoriaBuscarWidgetState
 
     _model.searchBarTextController ??= TextEditingController();
     _model.searchBarFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
