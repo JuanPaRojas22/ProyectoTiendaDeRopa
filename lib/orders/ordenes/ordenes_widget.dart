@@ -91,7 +91,7 @@ class _OrdenesWidgetState extends State<OrdenesWidget> {
                       Align(
                         alignment: AlignmentDirectional(0.0, 0.0),
                         child: Text(
-                          'No hay nada en el carrito',
+                          'No tienes ordenes',
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(

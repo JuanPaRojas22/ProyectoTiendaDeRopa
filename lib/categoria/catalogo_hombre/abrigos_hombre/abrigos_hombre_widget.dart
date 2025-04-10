@@ -1,4 +1,4 @@
-import '/components/ordenes_btn_widget.dart';
+import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -70,58 +70,17 @@ class _AbrigosHombreWidgetState extends State<AbrigosHombreWidget> {
             ],
           ),
           actions: [
-            InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                context.pushNamed(ProfilePageWidget.routeName);
-              },
-              child: Container(
-                width: 30.0,
-                height: 30.0,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: wrapWithModel(
+                    model: _model.navbarModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: NavbarWidget(),
+                  ),
                 ),
-                child: Image.asset(
-                  'assets/images/usuario.png',
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(6.0, 0.0, 6.0, 0.0),
-              child: Container(
-                width: 30.0,
-                height: 30.0,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: Image.asset(
-                  'assets/images/carrito-de-compras-2.png',
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-            Align(
-              alignment: AlignmentDirectional(0.0, 0.0),
-              child: InkWell(
-                splashColor: Colors.transparent,
-                focusColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                highlightColor: Colors.transparent,
-                onTap: () async {
-                  context.pushNamed(OrdenDetallesWidget.routeName);
-                },
-                child: wrapWithModel(
-                  model: _model.ordenesBtnModel,
-                  updateCallback: () => safeSetState(() {}),
-                  child: OrdenesBtnWidget(),
-                ),
-              ),
+              ],
             ),
           ],
           centerTitle: false,

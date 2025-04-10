@@ -1,3 +1,4 @@
+import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -57,7 +58,20 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: [
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: wrapWithModel(
+                    model: _model.navbarModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: NavbarWidget(),
+                  ),
+                ),
+              ],
+            ),
+          ],
           centerTitle: false,
           elevation: 0.0,
         ),

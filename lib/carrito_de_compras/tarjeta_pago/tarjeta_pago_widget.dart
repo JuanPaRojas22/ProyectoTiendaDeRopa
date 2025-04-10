@@ -1,3 +1,4 @@
+import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -54,10 +55,24 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
             'Ingrese los datos',
             style: FlutterFlowTheme.of(context).displaySmall.override(
                   fontFamily: 'Inter Tight',
+                  fontSize: 25.0,
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: [],
+          actions: [
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: wrapWithModel(
+                    model: _model.navbarModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: NavbarWidget(),
+                  ),
+                ),
+              ],
+            ),
+          ],
           centerTitle: false,
           elevation: 0.0,
         ),

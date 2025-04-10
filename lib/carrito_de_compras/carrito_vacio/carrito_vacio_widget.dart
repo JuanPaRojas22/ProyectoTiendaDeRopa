@@ -107,7 +107,7 @@ class _CarritoVacioWidgetState extends State<CarritoVacioWidget> {
                           EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed(LoginWidget.routeName);
+                          context.pushNamed(CategoriasWidget.routeName);
                         },
                         text: 'Explorar  catálogo',
                         options: FFButtonOptions(

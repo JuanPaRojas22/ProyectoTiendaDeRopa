@@ -1,3 +1,4 @@
+import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -64,18 +65,29 @@ class _OrdenEstadoWidgetState extends State<OrdenEstadoWidget> {
           ),
           title: Align(
             alignment: AlignmentDirectional(0.0, 0.0),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 50.0, 0.0),
-              child: Text(
-                'Mis ordenes',
-                style: FlutterFlowTheme.of(context).displaySmall.override(
-                      fontFamily: 'Inter Tight',
-                      letterSpacing: 0.0,
-                    ),
-              ),
+            child: Text(
+              'Mis ordenes',
+              style: FlutterFlowTheme.of(context).displaySmall.override(
+                    fontFamily: 'Inter Tight',
+                    fontSize: 25.0,
+                    letterSpacing: 0.0,
+                  ),
             ),
           ),
-          actions: [],
+          actions: [
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Expanded(
+                  child: wrapWithModel(
+                    model: _model.navbarModel,
+                    updateCallback: () => safeSetState(() {}),
+                    child: NavbarWidget(),
+                  ),
+                ),
+              ],
+            ),
+          ],
           centerTitle: false,
           elevation: 0.0,
         ),
