@@ -51,60 +51,17 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: true,
-          leading: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
-            child: FFButtonWidget(
-              onPressed: () async {
-                context.safePop();
-              },
-              text: 'Button',
-              icon: Icon(
-                Icons.arrow_back_outlined,
-                color: FlutterFlowTheme.of(context).secondaryText,
-                size: 35.0,
-              ),
-              options: FFButtonOptions(
-                width: 40.0,
-                height: 40.0,
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                iconAlignment: IconAlignment.start,
-                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                color: FlutterFlowTheme.of(context).primaryBackground,
-                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                      fontFamily: 'Inter Tight',
-                      color: Colors.white,
-                      letterSpacing: 0.0,
-                    ),
-                elevation: 0.0,
-                borderRadius: BorderRadius.circular(30.0),
-              ),
-            ),
-          ),
-          title: Align(
-            alignment: AlignmentDirectional(-1.0, 0.0),
-            child: Text(
-              'Perfil',
-              style: FlutterFlowTheme.of(context).headlineSmall.override(
-                    fontFamily: 'Inter Tight',
-                    letterSpacing: 0.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-            ),
-          ),
-          actions: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Expanded(
-                  child: wrapWithModel(
-                    model: _model.navbarModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: NavbarWidget(),
-                  ),
+          title: Text(
+            'Perfil',
+            style: FlutterFlowTheme.of(context).titleLarge.override(
+                  fontFamily: 'Outfit',
+                  color: Color(0xFF14181B),
+                  fontSize: 30.0,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.w500,
                 ),
-              ],
-            ),
-          ],
+          ),
+          actions: [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -543,6 +500,15 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 ),
                         elevation: 2.0,
                         borderRadius: BorderRadius.circular(12.0),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                      child: wrapWithModel(
+                        model: _model.navbarModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: NavbarWidget(),
                       ),
                     ),
                   ].divide(SizedBox(height: 16.0)),

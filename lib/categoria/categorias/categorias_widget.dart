@@ -70,13 +70,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                   fontWeight: FontWeight.w500,
                 ),
           ),
-          actions: [
-            wrapWithModel(
-              model: _model.navbarModel,
-              updateCallback: () => safeSetState(() {}),
-              child: NavbarWidget(),
-            ),
-          ],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -272,7 +266,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        AbrigosHombreWidget.routeName);
+                                        CategoriaEspecificaHombreWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Abrigos';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -292,7 +290,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/cd1fc4e4-5d02-4f18-afd7-a1ea42ff1f73/sportswear-club-fleece-pullover-hoodie-Gw4Nwq.png',
+                                              'https://img.freepik.com/fotos-premium/bebe-ninos-ropa-retro-primavera-otono_86390-1781.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,
@@ -335,7 +333,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        PantalonesHombreWidget.routeName);
+                                        CategoriaEspecificaHombreWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Pantalones';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -355,7 +357,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5de4d66e-c076-4bf7-80ca-a220e301cb3a/sportswear-club-fleece-joggers-KflRdQ.png',
+                                              'https://img.freepik.com/fotos-premium/turista-masculino-que-lleva-pantalones-cargo-que-colocan-parque_38810-2629.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,
@@ -398,7 +400,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        ShortsHombreWidget.routeName);
+                                        CategoriaEspecificaHombreWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Shorts';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -418,7 +424,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/64797ee7-26d7-4bd7-97c8-84d4edd8a48f/sportswear-mens-fleece-shorts-GPCN4W.png',
+                                              'https://img.freepik.com/foto-gratis/hombre-pantalones-cortos-azul_53876-102064.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,
@@ -461,7 +467,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        CamisasHombreWidget.routeName);
+                                        CategoriaEspecificaHombreWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Camisas';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -481,7 +491,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/55f6abe8-760c-427f-8cfa-b2df31bdd5b5/jordan-sport-dna-85-mens-t-shirt-ZLs0q3.png',
+                                              'https://img.freepik.com/foto-gratis/disparo-vertical-empresario-concentrado-escuchando-atentamente-manos-cruzadas_181624-29443.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,
@@ -524,7 +534,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        ZapatosHombreWidget.routeName);
+                                        CategoriaEspecificaHombreWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Zapatos';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -544,7 +558,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e67ed1da-48bf-4d03-9654-fa9c7b76ecce/blazer-mid-77-vintage-mens-shoes-nw30B2.png',
+                                              'https://img.freepik.com/fotos-premium/pies-hombre-zapatillas-deportivas-blancas-dia-dia-fabricadas-piel-natural-cordones_173815-12991.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,
@@ -576,6 +590,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                     ),
                                   ),
                                 ),
+                              ),
+                              wrapWithModel(
+                                model: _model.navbarModel,
+                                updateCallback: () => safeSetState(() {}),
+                                child: NavbarWidget(),
                               ),
                             ],
                           ),
@@ -622,7 +641,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        AbrigosMujeresWidget.routeName);
+                                        CategoriaEspecificaMujerWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Abrigos';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -642,7 +665,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/cd1fc4e4-5d02-4f18-afd7-a1ea42ff1f73/sportswear-club-fleece-pullover-hoodie-Gw4Nwq.png',
+                                              'https://img.freepik.com/foto-gratis/chica-rubia-abrigo-rojo-campo-cubierto-nieve_273443-1074.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,
@@ -685,7 +708,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        PantalonesMujeresWidget.routeName);
+                                        CategoriaEspecificaMujerWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Pantalones';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -705,7 +732,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5de4d66e-c076-4bf7-80ca-a220e301cb3a/sportswear-club-fleece-joggers-KflRdQ.png',
+                                              'https://img.freepik.com/foto-gratis/tiro-completo-mujer-sonriente-posando-al-aire-libre_23-2150360988.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,
@@ -748,7 +775,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        ShortsMujeresWidget.routeName);
+                                        CategoriaEspecificaMujerWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Shorts';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -768,7 +799,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/64797ee7-26d7-4bd7-97c8-84d4edd8a48f/sportswear-mens-fleece-shorts-GPCN4W.png',
+                                              'https://img.freepik.com/foto-gratis/dama-viste-camiseta-manga-larga_231208-9010.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,
@@ -811,7 +842,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        CamisasMujeresWidget.routeName);
+                                        CategoriaEspecificaMujerWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Camisas';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -831,7 +866,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/55f6abe8-760c-427f-8cfa-b2df31bdd5b5/jordan-sport-dna-85-mens-t-shirt-ZLs0q3.png',
+                                              'https://img.freepik.com/fotos-premium/mujer-hermosa-vistosa-camisa-rosada-botones-vaqueros_1122950-17294.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,
@@ -874,7 +909,11 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
                                     context.pushNamed(
-                                        ZapatosMujeresWidget.routeName);
+                                        CategoriaEspecificaMujerWidget
+                                            .routeName);
+
+                                    FFAppState().categorias = 'Zapatos';
+                                    safeSetState(() {});
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -894,7 +933,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                             child: Image.network(
-                                              'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/e67ed1da-48bf-4d03-9654-fa9c7b76ecce/blazer-mid-77-vintage-mens-shoes-nw30B2.png',
+                                              'https://img.freepik.com/fotos-premium/primer-plano-zapatos-moda_1122-6385.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
                                               width: 70.0,
                                               height: 70.0,
                                               fit: BoxFit.cover,

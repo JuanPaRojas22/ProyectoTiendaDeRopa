@@ -1,5 +1,4 @@
 import '/components/navbar_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -49,45 +48,17 @@ class _OrdenEstadoWidgetState extends State<OrdenEstadoWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: Icon(
-              Icons.arrow_back_rounded,
-              color: Color(0xFF15161E),
-              size: 30.0,
-            ),
-            onPressed: () async {
-              context.safePop();
-            },
-          ),
-          title: Align(
-            alignment: AlignmentDirectional(0.0, 0.0),
-            child: Text(
-              'Mis ordenes',
-              style: FlutterFlowTheme.of(context).displaySmall.override(
-                    fontFamily: 'Inter Tight',
-                    fontSize: 25.0,
-                    letterSpacing: 0.0,
-                  ),
-            ),
-          ),
-          actions: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Expanded(
-                  child: wrapWithModel(
-                    model: _model.navbarModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: NavbarWidget(),
-                  ),
+          title: Text(
+            'Mis ordenes',
+            style: FlutterFlowTheme.of(context).titleLarge.override(
+                  fontFamily: 'Outfit',
+                  color: Color(0xFF14181B),
+                  fontSize: 30.0,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.w500,
                 ),
-              ],
-            ),
-          ],
+          ),
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -478,6 +449,15 @@ class _OrdenEstadoWidgetState extends State<OrdenEstadoWidget> {
                               ],
                             ),
                           ),
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 170.0, 0.0, 0.0),
+                        child: wrapWithModel(
+                          model: _model.navbarModel,
+                          updateCallback: () => safeSetState(() {}),
+                          child: NavbarWidget(),
                         ),
                       ),
                     ],

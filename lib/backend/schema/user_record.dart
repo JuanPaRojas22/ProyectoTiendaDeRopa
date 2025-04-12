@@ -36,11 +36,17 @@ class UserRecord extends FirestoreRecord {
   String get password => _password ?? '';
   bool hasPassword() => _password != null;
 
+  // "uid" field.
+  String? _uid;
+  String get uid => _uid ?? '';
+  bool hasUid() => _uid != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
     _createdTime = snapshotData['created_time'] as DateTime?;
     _password = snapshotData['password'] as String?;
+    _uid = snapshotData['uid'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -81,6 +87,7 @@ Map<String, dynamic> createUserRecordData({
   String? displayName,
   DateTime? createdTime,
   String? password,
+  String? uid,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -88,6 +95,7 @@ Map<String, dynamic> createUserRecordData({
       'display_name': displayName,
       'created_time': createdTime,
       'password': password,
+      'uid': uid,
     }.withoutNulls,
   );
 
@@ -102,12 +110,13 @@ class UserRecordDocumentEquality implements Equality<UserRecord> {
     return e1?.email == e2?.email &&
         e1?.displayName == e2?.displayName &&
         e1?.createdTime == e2?.createdTime &&
-        e1?.password == e2?.password;
+        e1?.password == e2?.password &&
+        e1?.uid == e2?.uid;
   }
 
   @override
   int hash(UserRecord? e) => const ListEquality()
-      .hash([e?.email, e?.displayName, e?.createdTime, e?.password]);
+      .hash([e?.email, e?.displayName, e?.createdTime, e?.password, e?.uid]);
 
   @override
   bool isValidKey(Object? o) => o is UserRecord;

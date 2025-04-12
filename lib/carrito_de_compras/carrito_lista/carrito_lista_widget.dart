@@ -52,26 +52,16 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: false,
           title: Text(
-            'Carrito ',
-            style: FlutterFlowTheme.of(context).displaySmall.override(
-                  fontFamily: 'Inter Tight',
+            'Carrito',
+            style: FlutterFlowTheme.of(context).titleLarge.override(
+                  fontFamily: 'Outfit',
+                  color: Color(0xFF14181B),
+                  fontSize: 30.0,
                   letterSpacing: 0.0,
+                  fontWeight: FontWeight.w500,
                 ),
           ),
-          actions: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                Expanded(
-                  child: wrapWithModel(
-                    model: _model.navbarModel,
-                    updateCallback: () => safeSetState(() {}),
-                    child: NavbarWidget(),
-                  ),
-                ),
-              ],
-            ),
-          ],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
@@ -699,6 +689,15 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                           ),
                         ),
                       ],
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                      child: wrapWithModel(
+                        model: _model.navbarModel,
+                        updateCallback: () => safeSetState(() {}),
+                        child: NavbarWidget(),
+                      ),
                     ),
                   ],
                 ),

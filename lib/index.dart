@@ -45,3 +45,7 @@ export '/carrito_de_compras/tarjeta_pago/tarjeta_pago_widget.dart'
     show TarjetaPagoWidget;
 export '/login/registro/registro_widget.dart' show RegistroWidget;
 export '/profile_page/profile_page_widget.dart' show ProfilePageWidget;
+export '/categoria/categoria_especifica_hombre/categoria_especifica_hombre_widget.dart'
+    show CategoriaEspecificaHombreWidget;
+export '/categoria/categoria_especifica_mujer/categoria_especifica_mujer_widget.dart'
+    show CategoriaEspecificaMujerWidget;

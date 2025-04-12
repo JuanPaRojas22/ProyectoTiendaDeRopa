@@ -19,6 +19,9 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _emailSignIn = prefs.getString('ff_emailSignIn') ?? _emailSignIn;
     });
+    _safeInit(() {
+      _categorias = prefs.getString('ff_categorias') ?? _categorias;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -57,6 +60,13 @@ class FFAppState extends ChangeNotifier {
   bool get cart => _cart;
   set cart(bool value) {
     _cart = value;
+  }
+
+  String _categorias = '';
+  String get categorias => _categorias;
+  set categorias(String value) {
+    _categorias = value;
+    prefs.setString('ff_categorias', value);
   }
 }
 

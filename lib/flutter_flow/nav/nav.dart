@@ -218,6 +218,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: ProfilePageWidget.routeName,
           path: ProfilePageWidget.routePath,
           builder: (context, params) => ProfilePageWidget(),
+        ),
+        FFRoute(
+          name: CategoriaEspecificaHombreWidget.routeName,
+          path: CategoriaEspecificaHombreWidget.routePath,
+          builder: (context, params) => CategoriaEspecificaHombreWidget(
+            genero: params.getParam(
+              'genero',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: CategoriaEspecificaMujerWidget.routeName,
+          path: CategoriaEspecificaMujerWidget.routePath,
+          builder: (context, params) => CategoriaEspecificaMujerWidget(
+            genero: params.getParam(
+              'genero',
+              ParamType.String,
+            ),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
