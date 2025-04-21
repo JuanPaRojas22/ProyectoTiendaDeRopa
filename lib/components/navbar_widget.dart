@@ -125,7 +125,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                 safeSetState(() {});
 
                 context.pushNamed(
-                  CarritoVacioWidget.routeName,
+                  CarritoListaWidget.routeName,
                   extra: <String, dynamic>{
                     kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,

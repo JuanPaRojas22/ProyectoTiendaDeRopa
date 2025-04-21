@@ -39,12 +39,16 @@ class _RegistroWidgetState extends State<RegistroWidget>
       length: 1,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     _model.nameCreateTextFieldTextController ??= TextEditingController();
     _model.nameCreateTextFieldFocusNode ??= FocusNode();
 
     _model.emailAddressCreateTextFieldTextController ??=
         TextEditingController();
     _model.emailAddressCreateTextFieldFocusNode ??= FocusNode();
+
+    _model.phoneNumberCreateTextFieldTextController ??= TextEditingController();
+    _model.phoneNumberCreateTextFieldFocusNode ??= FocusNode();
 
     _model.passwordCreateTextFieldTextController ??= TextEditingController();
     _model.passwordCreateTextFieldFocusNode ??= FocusNode();
@@ -469,6 +473,131 @@ class _RegistroWidgetState extends State<RegistroWidget>
                                                 width: double.infinity,
                                                 child: TextFormField(
                                                   controller: _model
+                                                      .phoneNumberCreateTextFieldTextController,
+                                                  focusNode: _model
+                                                      .phoneNumberCreateTextFieldFocusNode,
+                                                  autofocus: false,
+                                                  autofillHints: [
+                                                    AutofillHints.password
+                                                  ],
+                                                  obscureText: !_model
+                                                      .phoneNumberCreateTextFieldVisibility,
+                                                  decoration: InputDecoration(
+                                                    labelText:
+                                                        'Numero de telefono',
+                                                    labelStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                    enabledBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .alternate,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              40.0),
+                                                    ),
+                                                    focusedBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              40.0),
+                                                    ),
+                                                    errorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              40.0),
+                                                    ),
+                                                    focusedErrorBorder:
+                                                        OutlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .error,
+                                                        width: 2.0,
+                                                      ),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              40.0),
+                                                    ),
+                                                    filled: true,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
+                                                    contentPadding:
+                                                        EdgeInsets.all(24.0),
+                                                    suffixIcon: InkWell(
+                                                      onTap: () => safeSetState(
+                                                        () => _model
+                                                                .phoneNumberCreateTextFieldVisibility =
+                                                            !_model
+                                                                .phoneNumberCreateTextFieldVisibility,
+                                                      ),
+                                                      focusNode: FocusNode(
+                                                          skipTraversal: true),
+                                                      child: Icon(
+                                                        _model.phoneNumberCreateTextFieldVisibility
+                                                            ? Icons
+                                                                .visibility_outlined
+                                                            : Icons
+                                                                .visibility_off_outlined,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .secondaryText,
+                                                        size: 24.0,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                  cursorColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  validator: _model
+                                                      .phoneNumberCreateTextFieldTextControllerValidator
+                                                      .asValidator(context),
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 16.0),
+                                              child: Container(
+                                                width: double.infinity,
+                                                child: TextFormField(
+                                                  controller: _model
                                                       .passwordCreateTextFieldTextController,
                                                   focusNode: _model
                                                       .passwordCreateTextFieldFocusNode,
@@ -769,6 +898,10 @@ class _RegistroWidgetState extends State<RegistroWidget>
                                                           password: _model
                                                               .passwordCreateTextFieldTextController
                                                               .text,
+                                                          phoneNumber: _model
+                                                              .phoneNumberCreateTextFieldTextController
+                                                              .text,
+                                                          uid: currentUserUid,
                                                         ));
 
                                                     context.pushNamedAuth(

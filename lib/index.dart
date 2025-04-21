@@ -7,26 +7,6 @@ export '/login/olvido_contrasena/olvido_contrasena_widget.dart'
 export '/login/olvido_contrasena_mensaje/olvido_contrasena_mensaje_widget.dart'
     show OlvidoContrasenaMensajeWidget;
 export '/categoria/categorias/categorias_widget.dart' show CategoriasWidget;
-export '/categoria/catalogo_hombre/abrigos_hombre/abrigos_hombre_widget.dart'
-    show AbrigosHombreWidget;
-export '/categoria/catalogo_mujer/abrigos_mujeres/abrigos_mujeres_widget.dart'
-    show AbrigosMujeresWidget;
-export '/categoria/catalogo_mujer/camisas_mujeres/camisas_mujeres_widget.dart'
-    show CamisasMujeresWidget;
-export '/categoria/catalogo_mujer/pantalones_mujeres/pantalones_mujeres_widget.dart'
-    show PantalonesMujeresWidget;
-export '/categoria/catalogo_mujer/shorts_mujeres/shorts_mujeres_widget.dart'
-    show ShortsMujeresWidget;
-export '/categoria/catalogo_mujer/zapatos_mujeres/zapatos_mujeres_widget.dart'
-    show ZapatosMujeresWidget;
-export '/categoria/catalogo_hombre/camisas_hombre/camisas_hombre_widget.dart'
-    show CamisasHombreWidget;
-export '/categoria/catalogo_hombre/pantalones_hombre/pantalones_hombre_widget.dart'
-    show PantalonesHombreWidget;
-export '/categoria/catalogo_hombre/shorts_hombre/shorts_hombre_widget.dart'
-    show ShortsHombreWidget;
-export '/categoria/catalogo_hombre/zapatos_hombre/zapatos_hombre_widget.dart'
-    show ZapatosHombreWidget;
 export '/orders/ordenes/ordenes_widget.dart' show OrdenesWidget;
 export '/orders/orden_detalles/orden_detalles_widget.dart'
     show OrdenDetallesWidget;

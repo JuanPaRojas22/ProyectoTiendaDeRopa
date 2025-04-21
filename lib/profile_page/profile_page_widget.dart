@@ -75,17 +75,19 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Text(
-                      'John Doe',
+                      currentUserDisplayName,
                       textAlign: TextAlign.center,
+                      maxLines: 3,
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
                                 fontFamily: 'Inter Tight',
+                                fontSize: 20.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
                               ),
                     ),
                     Text(
-                      'john@doe.com',
+                      currentUserEmail,
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Inter',
@@ -170,7 +172,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Phone Number',
+                                    currentPhoneNumber,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -180,13 +182,15 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '+1 (555) 123-4567',
+                                    currentPhoneNumber,
+                                    maxLines: 3,
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Inter',
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
+                                          fontSize: 14.0,
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -213,38 +217,6 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   ),
                                   Text(
                                     'January 15, 1985',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryText,
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 8.0, 0.0, 8.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'Customer Since',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                  ),
-                                  Text(
-                                    'March 10, 2022',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(

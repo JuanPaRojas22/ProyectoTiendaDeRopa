@@ -5,6 +5,10 @@ import 'carrito_lista_widget.dart' show CarritoListaWidget;
 import 'package:flutter/material.dart';
 
 class CarritoListaModel extends FlutterFlowModel<CarritoListaWidget> {
+  ///  Local state fields for this page.
+
+  double? costoEnvio = 7.0;
+
   ///  State fields for stateful widgets in this page.
 
   // Model for NAVBAR component.

@@ -22,6 +22,15 @@ class FFAppState extends ChangeNotifier {
     _safeInit(() {
       _categorias = prefs.getString('ff_categorias') ?? _categorias;
     });
+    _safeInit(() {
+      _precioTotal = prefs.getDouble('ff_precioTotal') ?? _precioTotal;
+    });
+    _safeInit(() {
+      _granTotal = prefs.getDouble('ff_granTotal') ?? _granTotal;
+    });
+    _safeInit(() {
+      _totalProductos = prefs.getInt('ff_totalProductos') ?? _totalProductos;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -67,6 +76,27 @@ class FFAppState extends ChangeNotifier {
   set categorias(String value) {
     _categorias = value;
     prefs.setString('ff_categorias', value);
+  }
+
+  double _precioTotal = 0.0;
+  double get precioTotal => _precioTotal;
+  set precioTotal(double value) {
+    _precioTotal = value;
+    prefs.setDouble('ff_precioTotal', value);
+  }
+
+  double _granTotal = 0.0;
+  double get granTotal => _granTotal;
+  set granTotal(double value) {
+    _granTotal = value;
+    prefs.setDouble('ff_granTotal', value);
+  }
+
+  int _totalProductos = 0;
+  int get totalProductos => _totalProductos;
+  set totalProductos(int value) {
+    _totalProductos = value;
+    prefs.setInt('ff_totalProductos', value);
   }
 }
 

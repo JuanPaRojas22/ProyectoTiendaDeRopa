@@ -1,3 +1,4 @@
+import '/backend/backend.dart';
 import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -5,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'carrito_lista_model.dart';
 export 'carrito_lista_model.dart';
 
@@ -40,6 +42,8 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -93,425 +97,189 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
-                      child: ListView(
-                        padding: EdgeInsets.zero,
-                        primary: false,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
-                        children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 8.0, 16.0, 0.0),
-                            child: Container(
-                              width: double.infinity,
-                              height: 100.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4.0,
-                                    color: Color(0x320E151B),
-                                    offset: Offset(
-                                      0.0,
-                                      1.0,
-                                    ),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(8.0),
+                      child: StreamBuilder<List<CarritoRecord>>(
+                        stream: queryCarritoRecord(),
+                        builder: (context, snapshot) {
+                          // Customize what your widget looks like when it's loading.
+                          if (!snapshot.hasData) {
+                            return Center(
+                              child: SizedBox(
+                                width: 50.0,
+                                height: 50.0,
+                                child: CircularProgressIndicator(
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                    FlutterFlowTheme.of(context).primary,
+                                  ),
+                                ),
                               ),
-                              child: Padding(
+                            );
+                          }
+                          List<CarritoRecord> listViewCarritoRecordList =
+                              snapshot.data!;
+
+                          return ListView.builder(
+                            padding: EdgeInsets.zero,
+                            primary: false,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: listViewCarritoRecordList.length,
+                            itemBuilder: (context, listViewIndex) {
+                              final listViewCarritoRecord =
+                                  listViewCarritoRecordList[listViewIndex];
+                              return Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 8.0, 8.0, 8.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Hero(
-                                      tag: 'ControllerImage',
-                                      transitionOnUserGestures: true,
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                        child: Image.network(
-                                          'https://images.unsplash.com/photo-1622445272461-c6580cab8755?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTYyMDF8MHwxfHNlYXJjaHwxNHx8Y2FtaXNldGF8ZW58MHx8fHwxNzQyODc0MzgyfDA&ixlib=rb-4.0.3&q=80&w=1080',
-                                          width: 80.0,
-                                          height: 80.0,
-                                          fit: BoxFit.fitWidth,
+                                    16.0, 8.0, 16.0, 10.0),
+                                child: Container(
+                                  width: double.infinity,
+                                  height: 176.31,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 4.0,
+                                        color: Color(0x320E151B),
+                                        offset: Offset(
+                                          0.0,
+                                          1.0,
                                         ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 8.0),
-                                              child: Text(
-                                                'Camiseta de hombre',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        12.0, 8.0, 8.0, 8.0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Hero(
+                                          tag: valueOrDefault<String>(
+                                            listViewCarritoRecord
+                                                .imagenInventario,
+                                            'https://img.freepik.com/vector-premium/marca-icono-imagen-estilo-relleno_1223784-5604.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740' +
+                                                '$listViewIndex',
+                                          ),
+                                          transitionOnUserGestures: true,
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            child: Image.network(
+                                              valueOrDefault<String>(
+                                                listViewCarritoRecord
+                                                    .imagenInventario,
+                                                'https://img.freepik.com/vector-premium/marca-icono-imagen-estilo-relleno_1223784-5604.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
+                                              ),
+                                              width: 80.0,
+                                              height: 80.0,
+                                              fit: BoxFit.fitWidth,
+                                            ),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 0.0, 0.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 8.0),
+                                                  child: Text(
+                                                    listViewCarritoRecord
+                                                        .nombreInventario,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .titleLarge
                                                         .override(
                                                           fontFamily:
                                                               'Inter Tight',
                                                           letterSpacing: 0.0,
                                                         ),
-                                              ),
-                                            ),
-                                            Text(
-                                              '\$40.00',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                            Text(
-                                              'Cantidad: 1',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelSmall
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Quanity: 1',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 40.0,
-                                      icon: Icon(
-                                        Icons.edit_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 20.0,
-                                      ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
-                                    ),
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 40.0,
-                                      icon: Icon(
-                                        Icons.delete_outline_rounded,
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        size: 20.0,
-                                      ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 8.0, 16.0, 0.0),
-                            child: Container(
-                              width: double.infinity,
-                              height: 100.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4.0,
-                                    color: Color(0x320E151B),
-                                    offset: Offset(
-                                      0.0,
-                                      1.0,
-                                    ),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 8.0, 8.0, 8.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Hero(
-                                      tag: 'ControllerImage',
-                                      transitionOnUserGestures: true,
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                        child: Image.network(
-                                          'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/7c5678f4-c28d-4862-a8d9-56750f839f12/zion-1-basketball-shoes-bJ0hLJ.png',
-                                          width: 80.0,
-                                          height: 80.0,
-                                          fit: BoxFit.fitWidth,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 8.0),
-                                              child: Text(
-                                                'Tennis de dama',
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleLarge
-                                                    .override(
-                                                      fontFamily: 'Inter Tight',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      letterSpacing: 0.0,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 5.0),
+                                                  child: Text(
+                                                    formatNumber(
+                                                      listViewCarritoRecord
+                                                          .precioInventario,
+                                                      formatType:
+                                                          FormatType.custom,
+                                                      currency: '',
+                                                      format: '',
+                                                      locale: '',
                                                     ),
-                                              ),
-                                            ),
-                                            Text(
-                                              '\$120.00',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Cantidad: 1',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .labelMedium
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           letterSpacing: 0.0,
                                                         ),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 40.0,
-                                      icon: Icon(
-                                        Icons.edit_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 20.0,
-                                      ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
-                                    ),
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 40.0,
-                                      icon: Icon(
-                                        Icons.delete_outline_rounded,
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        size: 20.0,
-                                      ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 8.0, 16.0, 0.0),
-                            child: Container(
-                              width: double.infinity,
-                              height: 100.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 4.0,
-                                    color: Color(0x320E151B),
-                                    offset: Offset(
-                                      0.0,
-                                      1.0,
-                                    ),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 8.0, 8.0, 8.0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Hero(
-                                      tag: 'ControllerImage',
-                                      transitionOnUserGestures: true,
-                                      child: ClipRRect(
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                        child: Image.network(
-                                          'https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/c639068c-ee02-493b-83a1-630885f45fb0/therma-mens-full-zip-training-hoodie-DwfKtF.png',
-                                          width: 80.0,
-                                          height: 80.0,
-                                          fit: BoxFit.fitWidth,
-                                        ),
-                                      ),
-                                    ),
-                                    Expanded(
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            12.0, 0.0, 0.0, 0.0),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 0.0, 0.0, 8.0),
-                                              child: Text(
-                                                'Sueter Unisex ',
-                                                style: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleLarge
-                                                    .override(
-                                                      fontFamily: 'Inter Tight',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      letterSpacing: 0.0,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 10.0, 0.0, 10.0),
+                                                  child: RichText(
+                                                    textScaler:
+                                                        MediaQuery.of(context)
+                                                            .textScaler,
+                                                    text: TextSpan(
+                                                      children: [
+                                                        TextSpan(
+                                                          text: 'Talla: ',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Inter',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                        ),
+                                                        TextSpan(
+                                                          text:
+                                                              '${listViewCarritoRecord.tallaInventario}',
+                                                          style: TextStyle(),
+                                                        )
+                                                      ],
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily: 'Inter',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
-                                              ),
+                                                  ),
+                                                ),
+                                              ],
                                             ),
-                                            Text(
-                                              '\$80.00',
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .labelMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
-                                            ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0.0, 8.0, 0.0, 0.0),
-                                              child: Text(
-                                                'Cantidad: 1',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelSmall
-                                                        .override(
-                                                          fontFamily: 'Inter',
-                                                          letterSpacing: 0.0,
-                                                        ),
-                                              ),
-                                            ),
-                                          ],
+                                          ),
                                         ),
-                                      ),
+                                      ],
                                     ),
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 40.0,
-                                      icon: Icon(
-                                        Icons.edit_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 20.0,
-                                      ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
-                                    ),
-                                    FlutterFlowIconButton(
-                                      borderColor: Colors.transparent,
-                                      borderRadius: 30.0,
-                                      borderWidth: 1.0,
-                                      buttonSize: 40.0,
-                                      icon: Icon(
-                                        Icons.delete_outline_rounded,
-                                        color:
-                                            FlutterFlowTheme.of(context).error,
-                                        size: 20.0,
-                                      ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
-                                      },
-                                    ),
-                                  ],
+                                  ),
                                 ),
-                              ),
-                            ),
-                          ),
-                        ],
+                              );
+                            },
+                          );
+                        },
                       ),
                     ),
                     Padding(
@@ -549,7 +317,7 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Precio base ',
+                                    'Costo de envío',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -558,36 +326,13 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '\$240.00',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 8.0, 24.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'IVA 13%',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  Text(
-                                    '\$12.25',
+                                    formatNumber(
+                                      _model.costoEnvio,
+                                      formatType: FormatType.custom,
+                                      currency: '',
+                                      format: '',
+                                      locale: '',
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -636,7 +381,14 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                                     ],
                                   ),
                                   Text(
-                                    '\$252.25',
+                                    formatNumber(
+                                      FFAppState().granTotal +
+                                          (_model.costoEnvio!),
+                                      formatType: FormatType.custom,
+                                      currency: '',
+                                      format: '',
+                                      locale: '',
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
@@ -663,10 +415,21 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  context
-                                      .pushNamed(TarjetaPagoWidget.routeName);
+                                  FFAppState().granTotal = 0.0;
+                                  safeSetState(() {});
+
+                                  context.pushNamed(
+                                    TarjetaPagoWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
-                                text: 'Agregar metodo de pago',
+                                text: 'Continuar con la compra',
                                 options: FFButtonOptions(
                                   height: 40.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
@@ -683,6 +446,34 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                                       ),
                                   elevation: 0.0,
                                   borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 0.0, 0.0),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    FFAppState().granTotal = 0.0;
+                                    safeSetState(() {});
+                                  },
+                                  text: 'Limpiar carrito',
+                                  options: FFButtonOptions(
+                                    height: 40.0,
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        16.0, 0.0, 16.0, 0.0),
+                                    iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 0.0, 0.0, 0.0),
+                                    color: FlutterFlowTheme.of(context).error,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .titleSmall
+                                        .override(
+                                          fontFamily: 'Inter Tight',
+                                          color: Colors.white,
+                                          letterSpacing: 0.0,
+                                        ),
+                                    elevation: 0.0,
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
                                 ),
                               ),
                             ],

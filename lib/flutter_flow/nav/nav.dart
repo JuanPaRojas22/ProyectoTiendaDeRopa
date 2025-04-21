@@ -115,56 +115,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CategoriasWidget(),
         ),
         FFRoute(
-          name: AbrigosHombreWidget.routeName,
-          path: AbrigosHombreWidget.routePath,
-          builder: (context, params) => AbrigosHombreWidget(),
-        ),
-        FFRoute(
-          name: AbrigosMujeresWidget.routeName,
-          path: AbrigosMujeresWidget.routePath,
-          builder: (context, params) => AbrigosMujeresWidget(),
-        ),
-        FFRoute(
-          name: CamisasMujeresWidget.routeName,
-          path: CamisasMujeresWidget.routePath,
-          builder: (context, params) => CamisasMujeresWidget(),
-        ),
-        FFRoute(
-          name: PantalonesMujeresWidget.routeName,
-          path: PantalonesMujeresWidget.routePath,
-          builder: (context, params) => PantalonesMujeresWidget(),
-        ),
-        FFRoute(
-          name: ShortsMujeresWidget.routeName,
-          path: ShortsMujeresWidget.routePath,
-          builder: (context, params) => ShortsMujeresWidget(),
-        ),
-        FFRoute(
-          name: ZapatosMujeresWidget.routeName,
-          path: ZapatosMujeresWidget.routePath,
-          builder: (context, params) => ZapatosMujeresWidget(),
-        ),
-        FFRoute(
-          name: CamisasHombreWidget.routeName,
-          path: CamisasHombreWidget.routePath,
-          builder: (context, params) => CamisasHombreWidget(),
-        ),
-        FFRoute(
-          name: PantalonesHombreWidget.routeName,
-          path: PantalonesHombreWidget.routePath,
-          builder: (context, params) => PantalonesHombreWidget(),
-        ),
-        FFRoute(
-          name: ShortsHombreWidget.routeName,
-          path: ShortsHombreWidget.routePath,
-          builder: (context, params) => ShortsHombreWidget(),
-        ),
-        FFRoute(
-          name: ZapatosHombreWidget.routeName,
-          path: ZapatosHombreWidget.routePath,
-          builder: (context, params) => ZapatosHombreWidget(),
-        ),
-        FFRoute(
           name: OrdenesWidget.routeName,
           path: OrdenesWidget.routePath,
           builder: (context, params) => OrdenesWidget(),
@@ -197,7 +147,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: TallaRopaWidget.routeName,
           path: TallaRopaWidget.routePath,
-          builder: (context, params) => TallaRopaWidget(),
+          builder: (context, params) => TallaRopaWidget(
+            invebtarioRef: params.getParam(
+              'invebtarioRef',
+              ParamType.DocumentReference,
+              isList: false,
+              collectionNamePath: ['inventario'],
+            ),
+          ),
         ),
         FFRoute(
           name: PagoExitosoWidget.routeName,

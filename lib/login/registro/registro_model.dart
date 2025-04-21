@@ -10,6 +10,8 @@ class RegistroModel extends FlutterFlowModel<RegistroWidget> {
   TabController? tabBarController;
   int get tabBarCurrentIndex =>
       tabBarController != null ? tabBarController!.index : 0;
+  int get tabBarPreviousIndex =>
+      tabBarController != null ? tabBarController!.previousIndex : 0;
 
   // State field(s) for name_CreateTextField widget.
   FocusNode? nameCreateTextFieldFocusNode;
@@ -21,6 +23,12 @@ class RegistroModel extends FlutterFlowModel<RegistroWidget> {
   TextEditingController? emailAddressCreateTextFieldTextController;
   String? Function(BuildContext, String?)?
       emailAddressCreateTextFieldTextControllerValidator;
+  // State field(s) for phoneNumber_CreateTextField widget.
+  FocusNode? phoneNumberCreateTextFieldFocusNode;
+  TextEditingController? phoneNumberCreateTextFieldTextController;
+  late bool phoneNumberCreateTextFieldVisibility;
+  String? Function(BuildContext, String?)?
+      phoneNumberCreateTextFieldTextControllerValidator;
   // State field(s) for password_CreateTextField widget.
   FocusNode? passwordCreateTextFieldFocusNode;
   TextEditingController? passwordCreateTextFieldTextController;
@@ -36,6 +44,7 @@ class RegistroModel extends FlutterFlowModel<RegistroWidget> {
 
   @override
   void initState(BuildContext context) {
+    phoneNumberCreateTextFieldVisibility = false;
     passwordCreateTextFieldVisibility = false;
     passwordConfirmVisibility = false;
   }
@@ -48,6 +57,9 @@ class RegistroModel extends FlutterFlowModel<RegistroWidget> {
 
     emailAddressCreateTextFieldFocusNode?.dispose();
     emailAddressCreateTextFieldTextController?.dispose();
+
+    phoneNumberCreateTextFieldFocusNode?.dispose();
+    phoneNumberCreateTextFieldTextController?.dispose();
 
     passwordCreateTextFieldFocusNode?.dispose();
     passwordCreateTextFieldTextController?.dispose();

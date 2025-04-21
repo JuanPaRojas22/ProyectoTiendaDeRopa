@@ -38,6 +38,7 @@ class _LoginWidgetState extends State<LoginWidget>
       length: 1,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+
     _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 

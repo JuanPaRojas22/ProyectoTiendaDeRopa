@@ -1,6 +1,10 @@
+import '/backend/backend.dart';
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import '/index.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +12,12 @@ import 'talla_ropa_model.dart';
 export 'talla_ropa_model.dart';
 
 class TallaRopaWidget extends StatefulWidget {
-  const TallaRopaWidget({super.key});
+  const TallaRopaWidget({
+    super.key,
+    required this.invebtarioRef,
+  });
+
+  final DocumentReference? invebtarioRef;
 
   static String routeName = 'TallaRopa';
   static String routePath = '/tallaRopa';
@@ -27,21 +36,6 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
     super.initState();
     _model = createModel(context, () => TallaRopaModel());
 
-    _model.tallaSAddressTextController ??= TextEditingController();
-    _model.tallaSAddressFocusNode ??= FocusNode();
-
-    _model.tallaMAddressTextController ??= TextEditingController();
-    _model.tallaMAddressFocusNode ??= FocusNode();
-
-    _model.tallaLAddressTextController ??= TextEditingController();
-    _model.tallaLAddressFocusNode ??= FocusNode();
-
-    _model.tallaXLAddressTextController ??= TextEditingController();
-    _model.tallaXLAddressFocusNode ??= FocusNode();
-
-    _model.talla2XLAddressTextController ??= TextEditingController();
-    _model.talla2XLAddressFocusNode ??= FocusNode();
-
     WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
@@ -54,551 +48,531 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        FocusScope.of(context).unfocus();
-        FocusManager.instance.primaryFocus?.unfocus();
-      },
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        body: SafeArea(
-          top: true,
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Expanded(
-                flex: 8,
-                child: Container(
-                  width: 100.0,
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                  ),
-                  alignment: AlignmentDirectional(0.0, -1.0),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
-                          child: Padding(
-                            padding: EdgeInsets.all(32.0),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Seleccione la talla ',
-                                  style: FlutterFlowTheme.of(context)
-                                      .displaySmall
-                                      .override(
-                                        fontFamily: 'Inter Tight',
-                                        letterSpacing: 0.0,
-                                      ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 12.0, 0.0, 24.0),
-                                  child: Text(
-                                    'Asegurate de seleccionar la talla corecta',
-                                    style: FlutterFlowTheme.of(context)
-                                        .labelMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
-                                    width: 370.0,
-                                    child: TextFormField(
-                                      controller:
-                                          _model.tallaSAddressTextController,
-                                      focusNode: _model.tallaSAddressFocusNode,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.email],
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Talla S',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      keyboardType: TextInputType.emailAddress,
-                                      validator: _model
-                                          .tallaSAddressTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
-                                    width: 370.0,
-                                    child: TextFormField(
-                                      controller:
-                                          _model.tallaMAddressTextController,
-                                      focusNode: _model.tallaMAddressFocusNode,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.email],
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Talla M',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      keyboardType: TextInputType.emailAddress,
-                                      validator: _model
-                                          .tallaMAddressTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
-                                    width: 370.0,
-                                    child: TextFormField(
-                                      controller:
-                                          _model.tallaLAddressTextController,
-                                      focusNode: _model.tallaLAddressFocusNode,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.email],
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Talla L',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      keyboardType: TextInputType.emailAddress,
-                                      validator: _model
-                                          .tallaLAddressTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
-                                    width: 370.0,
-                                    child: TextFormField(
-                                      controller:
-                                          _model.tallaXLAddressTextController,
-                                      focusNode: _model.tallaXLAddressFocusNode,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.email],
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Talla XL',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      keyboardType: TextInputType.emailAddress,
-                                      validator: _model
-                                          .tallaXLAddressTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: Container(
-                                    width: 370.0,
-                                    child: TextFormField(
-                                      controller:
-                                          _model.talla2XLAddressTextController,
-                                      focusNode:
-                                          _model.talla2XLAddressFocusNode,
-                                      autofocus: true,
-                                      autofillHints: [AutofillHints.email],
-                                      obscureText: false,
-                                      decoration: InputDecoration(
-                                        labelText: 'Talla 2XL',
-                                        labelStyle: FlutterFlowTheme.of(context)
-                                            .titleLarge
-                                            .override(
-                                              fontFamily: 'Inter Tight',
-                                              letterSpacing: 0.0,
-                                            ),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        errorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        focusedErrorBorder: OutlineInputBorder(
-                                          borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .error,
-                                            width: 2.0,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(12.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Inter',
-                                            letterSpacing: 0.0,
-                                          ),
-                                      keyboardType: TextInputType.emailAddress,
-                                      validator: _model
-                                          .talla2XLAddressTextControllerValidator
-                                          .asValidator(context),
-                                    ),
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 16.0),
-                                  child: FFButtonWidget(
-                                    onPressed: () async {
-                                      context.pushNamed(
-                                          CarritoListaWidget.routeName);
-                                    },
-                                    text: 'Confirmar',
-                                    options: FFButtonOptions(
-                                      width: 370.0,
-                                      height: 44.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Inter Tight',
-                                            color: Colors.white,
-                                            letterSpacing: 0.0,
-                                          ),
-                                      elevation: 3.0,
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(12.0),
-                                    ),
-                                  ),
-                                ),
-
-                                // You will have to add an action on this rich text to go to your login page.
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 12.0, 0.0, 12.0),
-                                  child: InkWell(
-                                    splashColor: Colors.transparent,
-                                    focusColor: Colors.transparent,
-                                    hoverColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () async {
-                                      context.pushNamed(
-                                          CategoriasWidget.routeName);
-                                    },
-                                    child: RichText(
-                                      textScaler:
-                                          MediaQuery.of(context).textScaler,
-                                      text: TextSpan(
-                                        children: [
-                                          TextSpan(
-                                            text:
-                                                'Para volver a la pagina de inicio? ',
-                                            style: TextStyle(),
-                                          ),
-                                          TextSpan(
-                                            text: 'Seleccione aquí',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Inter',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                  fontSize: 16.0,
-                                                  letterSpacing: 0.0,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                          )
-                                        ],
-                                        style: FlutterFlowTheme.of(context)
-                                            .labelLarge
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              letterSpacing: 0.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+    return StreamBuilder<InventarioRecord>(
+      stream: InventarioRecord.getDocument(widget.invebtarioRef!),
+      builder: (context, snapshot) {
+        // Customize what your widget looks like when it's loading.
+        if (!snapshot.hasData) {
+          return Scaffold(
+            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+            body: Center(
+              child: SizedBox(
+                width: 50.0,
+                height: 50.0,
+                child: CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    FlutterFlowTheme.of(context).primary,
                   ),
                 ),
               ),
-              if (responsiveVisibility(
-                context: context,
-                phone: false,
-                tablet: false,
-              ))
-                Expanded(
-                  flex: 6,
-                  child: Padding(
-                    padding: EdgeInsets.all(16.0),
+            ),
+          );
+        }
+
+        final tallaRopaInventarioRecord = snapshot.data!;
+
+        return GestureDetector(
+          onTap: () {
+            FocusScope.of(context).unfocus();
+            FocusManager.instance.primaryFocus?.unfocus();
+          },
+          child: Scaffold(
+            key: scaffoldKey,
+            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+            body: SafeArea(
+              top: true,
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    flex: 8,
                     child: Container(
                       width: 100.0,
                       height: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        image: DecorationImage(
-                          fit: BoxFit.cover,
-                          image: CachedNetworkImageProvider(
-                            'https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1380&q=80',
-                          ),
+                      ),
+                      alignment: AlignmentDirectional(0.0, -1.0),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(8.0),
+                              child: Image.network(
+                                valueOrDefault<String>(
+                                  tallaRopaInventarioRecord.imagenInventario,
+                                  'https://img.freepik.com/vector-premium/marca-icono-imagen-estilo-relleno_1223784-5604.jpg?ga=GA1.1.1679647535.1743393799&semt=ais_hybrid&w=740',
+                                ),
+                                width: 200.0,
+                                height: 200.0,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(-1.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    30.0, 5.0, 0.0, 0.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 5.0),
+                                      child: Text(
+                                        tallaRopaInventarioRecord
+                                            .nombreInventario,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 5.0, 0.0, 5.0),
+                                      child: Text(
+                                        formatNumber(
+                                          tallaRopaInventarioRecord
+                                              .precioInventario,
+                                          formatType: FormatType.custom,
+                                          currency: '',
+                                          format: '',
+                                          locale: '',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary,
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 10.0, 0.0, 15.0),
+                                      child: Text(
+                                        tallaRopaInventarioRecord
+                                            .descripcionInventario,
+                                        style: FlutterFlowTheme.of(context)
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 20.0, 0.0, 0.0),
+                                      child: FlutterFlowDropDown<String>(
+                                        controller: _model
+                                                .tallaValueController ??=
+                                            FormFieldController<String>(null),
+                                        options: ['S', 'M', 'L', 'XL', 'XXL'],
+                                        onChanged: (val) => safeSetState(
+                                            () => _model.tallaValue = val),
+                                        width: 206.69,
+                                        height: 40.0,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                        hintText: 'seleccione la talla',
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_down_rounded,
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryText,
+                                          size: 24.0,
+                                        ),
+                                        fillColor: Color(0xFFE8E8E8),
+                                        elevation: 2.0,
+                                        borderColor: Colors.transparent,
+                                        borderWidth: 0.0,
+                                        borderRadius: 8.0,
+                                        margin: EdgeInsetsDirectional.fromSTEB(
+                                            12.0, 0.0, 12.0, 0.0),
+                                        hidesUnderline: true,
+                                        isOverButton: false,
+                                        isSearchable: false,
+                                        isMultiSelect: false,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 20.0, 0.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 5.0, 0.0),
+                                            child: Text(
+                                              'Cantidad: ',
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                            ),
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        0.0, 0.0, 20.0, 0.0),
+                                                child: FlutterFlowIconButton(
+                                                  borderRadius: 20.0,
+                                                  buttonSize: 40.0,
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  icon: Icon(
+                                                    Icons.remove,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .info,
+                                                    size: 24.0,
+                                                  ),
+                                                  onPressed: () async {
+                                                    _model.cantProducto =
+                                                        _model.cantProducto! +
+                                                            -1;
+                                                    safeSetState(() {});
+                                                  },
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Text(
+                                                valueOrDefault<String>(
+                                                  _model.cantProducto
+                                                      ?.toString(),
+                                                  '1',
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        20.0, 0.0, 0.0, 0.0),
+                                                child: FlutterFlowIconButton(
+                                                  borderRadius: 20.0,
+                                                  buttonSize: 40.0,
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .primary,
+                                                  icon: Icon(
+                                                    Icons.add,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .info,
+                                                    size: 24.0,
+                                                  ),
+                                                  onPressed: () async {
+                                                    _model.cantProducto =
+                                                        _model.cantProducto! +
+                                                            1;
+                                                    safeSetState(() {});
+                                                  },
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsets.all(32.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 16.0),
+                                      child: Container(
+                                        width: 344.9,
+                                        height: 38.71,
+                                        decoration: BoxDecoration(
+                                          color: Color(0xFFD7D7D7),
+                                          borderRadius: BorderRadius.only(
+                                            bottomLeft: Radius.circular(20.0),
+                                            bottomRight: Radius.circular(20.0),
+                                            topLeft: Radius.circular(20.0),
+                                            topRight: Radius.circular(20.0),
+                                          ),
+                                        ),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 10.0, 0.0, 0.0),
+                                          child: RichText(
+                                            textScaler: MediaQuery.of(context)
+                                                .textScaler,
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text:
+                                                      'Precio total del producto: ',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                                ),
+                                                TextSpan(
+                                                  text: formatNumber(
+                                                    tallaRopaInventarioRecord
+                                                            .precioInventario *
+                                                        (_model.cantProducto!),
+                                                    formatType:
+                                                        FormatType.custom,
+                                                    currency: '',
+                                                    format: '',
+                                                    locale: '',
+                                                  ),
+                                                  style: TextStyle(),
+                                                )
+                                              ],
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Inter',
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 10.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () async {
+                                          await CarritoRecord.collection
+                                              .doc()
+                                              .set({
+                                            ...createCarritoRecordData(
+                                              nombreInventario:
+                                                  tallaRopaInventarioRecord
+                                                      .nombreInventario,
+                                              imagenInventario:
+                                                  tallaRopaInventarioRecord
+                                                      .imagenInventario,
+                                              tallaInventario:
+                                                  _model.tallaValue,
+                                              precioInventario:
+                                                  (_model.cantProducto!) *
+                                                      tallaRopaInventarioRecord
+                                                          .precioInventario,
+                                              cantidad: _model.cantProducto,
+                                            ),
+                                            ...mapToFirestore(
+                                              {
+                                                'date': FieldValue
+                                                    .serverTimestamp(),
+                                              },
+                                            ),
+                                          });
+                                          FFAppState().granTotal =
+                                              FFAppState().granTotal +
+                                                  (tallaRopaInventarioRecord
+                                                          .precioInventario *
+                                                      (_model.cantProducto!));
+                                          FFAppState().totalProductos =
+                                              FFAppState().totalProductos + 1;
+                                          safeSetState(() {});
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                'Se agrego al carrito',
+                                                style: TextStyle(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primaryText,
+                                                ),
+                                              ),
+                                              duration:
+                                                  Duration(milliseconds: 4000),
+                                              backgroundColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
+                                            ),
+                                          );
+                                        },
+                                        text: 'Agregar al carrito',
+                                        options: FFButtonOptions(
+                                          width: 370.0,
+                                          height: 44.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Inter Tight',
+                                                    color: Colors.white,
+                                                    letterSpacing: 0.0,
+                                                  ),
+                                          elevation: 3.0,
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(12.0),
+                                        ),
+                                      ),
+                                    ),
+
+                                    // You will have to add an action on this rich text to go to your login page.
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 0.0, 12.0),
+                                      child: InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          context.pushNamed(
+                                              CategoriasWidget.routeName);
+                                        },
+                                        child: RichText(
+                                          textScaler:
+                                              MediaQuery.of(context).textScaler,
+                                          text: TextSpan(
+                                            children: [
+                                              TextSpan(
+                                                text:
+                                                    'Para volver a la pagina de inicio? ',
+                                                style: TextStyle(),
+                                              ),
+                                              TextSpan(
+                                                text: 'Seleccione aquí',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          fontSize: 16.0,
+                                                          letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
+                                              )
+                                            ],
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelLarge
+                                                .override(
+                                                  fontFamily: 'Inter',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                        borderRadius: BorderRadius.circular(16.0),
                       ),
                     ),
                   ),
-                ),
-            ],
+                  if (responsiveVisibility(
+                    context: context,
+                    phone: false,
+                    tablet: false,
+                  ))
+                    Expanded(
+                      flex: 6,
+                      child: Padding(
+                        padding: EdgeInsets.all(16.0),
+                        child: Container(
+                          width: 100.0,
+                          height: double.infinity,
+                          decoration: BoxDecoration(
+                            color: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: CachedNetworkImageProvider(
+                                'https://images.unsplash.com/photo-1514924013411-cbf25faa35bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1380&q=80',
+                              ),
+                            ),
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                        ),
+                      ),
+                    ),
+                ],
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

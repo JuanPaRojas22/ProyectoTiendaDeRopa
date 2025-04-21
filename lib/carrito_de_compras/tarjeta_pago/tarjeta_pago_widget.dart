@@ -1,10 +1,13 @@
+import '/backend/backend.dart';
 import '/components/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/random_data_util.dart' as random_data;
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'tarjeta_pago_model.dart';
 export 'tarjeta_pago_model.dart';
 
@@ -40,6 +43,8 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -348,7 +353,7 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Precio base ',
+                                    'Costo de envío',
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
@@ -357,36 +362,13 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
                                         ),
                                   ),
                                   Text(
-                                    '\$240.00',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyLarge
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  24.0, 8.0, 24.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'IVA 13%',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Inter',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  Text(
-                                    '\$12.25',
+                                    formatNumber(
+                                      _model.costoEnvio,
+                                      formatType: FormatType.custom,
+                                      currency: '',
+                                      format: '',
+                                      locale: '',
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
@@ -435,7 +417,14 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
                                     ],
                                   ),
                                   Text(
-                                    '\$252.25',
+                                    formatNumber(
+                                      (_model.costoEnvio!) +
+                                          FFAppState().granTotal,
+                                      formatType: FormatType.custom,
+                                      currency: '',
+                                      format: '',
+                                      locale: '',
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .displaySmall
                                         .override(
@@ -462,8 +451,39 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
                             children: [
                               FFButtonWidget(
                                 onPressed: () async {
-                                  context
-                                      .pushNamed(PagoExitosoWidget.routeName);
+                                  await OrdenesRecord.collection.doc().set({
+                                    ...createOrdenesRecordData(
+                                      totalProductos:
+                                          FFAppState().totalProductos,
+                                      precioTotal: FFAppState().granTotal,
+                                      numeroOrden: random_data.randomString(
+                                        5,
+                                        7,
+                                        true,
+                                        true,
+                                        true,
+                                      ),
+                                    ),
+                                    ...mapToFirestore(
+                                      {
+                                        'date': FieldValue.serverTimestamp(),
+                                      },
+                                    ),
+                                  });
+                                  FFAppState().granTotal = 0.0;
+                                  FFAppState().totalProductos = 0;
+                                  safeSetState(() {});
+
+                                  context.pushNamed(
+                                    PagoExitosoWidget.routeName,
+                                    extra: <String, dynamic>{
+                                      kTransitionInfoKey: TransitionInfo(
+                                        hasTransition: true,
+                                        transitionType: PageTransitionType.fade,
+                                        duration: Duration(milliseconds: 0),
+                                      ),
+                                    },
+                                  );
                                 },
                                 text: 'Confirmar pago',
                                 options: FFButtonOptions(

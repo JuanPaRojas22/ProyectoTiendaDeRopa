@@ -4,6 +4,8 @@ import 'schema/util/firestore_util.dart';
 
 import 'schema/user_record.dart';
 import 'schema/inventario_record.dart';
+import 'schema/carrito_record.dart';
+import 'schema/ordenes_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -14,6 +16,8 @@ export 'schema/util/schema_util.dart';
 
 export 'schema/user_record.dart';
 export 'schema/inventario_record.dart';
+export 'schema/carrito_record.dart';
+export 'schema/ordenes_record.dart';
 
 /// Functions to query UserRecords (as a Stream and as a Future).
 Future<int> queryUserRecordCount({
@@ -84,6 +88,80 @@ Future<List<InventarioRecord>> queryInventarioRecordOnce({
     queryCollectionOnce(
       InventarioRecord.collection,
       InventarioRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query CarritoRecords (as a Stream and as a Future).
+Future<int> queryCarritoRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      CarritoRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<CarritoRecord>> queryCarritoRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      CarritoRecord.collection,
+      CarritoRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<CarritoRecord>> queryCarritoRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      CarritoRecord.collection,
+      CarritoRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query OrdenesRecords (as a Stream and as a Future).
+Future<int> queryOrdenesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      OrdenesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<OrdenesRecord>> queryOrdenesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      OrdenesRecord.collection,
+      OrdenesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<OrdenesRecord>> queryOrdenesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      OrdenesRecord.collection,
+      OrdenesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

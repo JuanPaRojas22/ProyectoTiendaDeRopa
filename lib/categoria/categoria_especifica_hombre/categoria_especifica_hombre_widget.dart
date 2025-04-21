@@ -157,8 +157,15 @@ class _CategoriaEspecificaHombreWidgetState
                                     hoverColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
-                                      context
-                                          .pushNamed(TallaRopaWidget.routeName);
+                                      context.pushNamed(
+                                        TallaRopaWidget.routeName,
+                                        queryParameters: {
+                                          'invebtarioRef': serializeParam(
+                                            listViewInventarioRecord.reference,
+                                            ParamType.DocumentReference,
+                                          ),
+                                        }.withoutNulls,
+                                      );
                                     },
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
