@@ -85,11 +85,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? CategoriasWidget() : SplashWidget(),
         ),
         FFRoute(
-          name: HomePageWidget.routeName,
-          path: HomePageWidget.routePath,
-          builder: (context, params) => HomePageWidget(),
-        ),
-        FFRoute(
           name: LoginWidget.routeName,
           path: LoginWidget.routePath,
           builder: (context, params) => LoginWidget(),
@@ -195,6 +190,26 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.String,
             ),
           ),
+        ),
+        FFRoute(
+          name: DireccionesWidget.routeName,
+          path: DireccionesWidget.routePath,
+          builder: (context, params) => DireccionesWidget(),
+        ),
+        FFRoute(
+          name: AjustesDireccionesWidget.routeName,
+          path: AjustesDireccionesWidget.routePath,
+          builder: (context, params) => AjustesDireccionesWidget(),
+        ),
+        FFRoute(
+          name: MetodosPagoWidget.routeName,
+          path: MetodosPagoWidget.routePath,
+          builder: (context, params) => MetodosPagoWidget(),
+        ),
+        FFRoute(
+          name: MetodosPagoAjustesWidget.routeName,
+          path: MetodosPagoAjustesWidget.routePath,
+          builder: (context, params) => MetodosPagoAjustesWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

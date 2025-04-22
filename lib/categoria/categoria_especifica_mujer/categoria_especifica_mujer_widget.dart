@@ -188,25 +188,6 @@ class _CategoriaEspecificaMujerWidgetState
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
-                                            Row(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.end,
-                                              children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 5.0, 5.0, 0.0),
-                                                  child: Icon(
-                                                    Icons.favorite_border,
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primaryText,
-                                                    size: 20.0,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
                                           ],
                                         ),
                                         Row(

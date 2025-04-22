@@ -20,6 +20,14 @@ class FFAppState extends ChangeNotifier {
       _emailSignIn = prefs.getString('ff_emailSignIn') ?? _emailSignIn;
     });
     _safeInit(() {
+      _phoneNumberSingIn =
+          prefs.getString('ff_phoneNumberSingIn') ?? _phoneNumberSingIn;
+    });
+    _safeInit(() {
+      _displayNameSingIn =
+          prefs.getString('ff_displayNameSingIn') ?? _displayNameSingIn;
+    });
+    _safeInit(() {
       _categorias = prefs.getString('ff_categorias') ?? _categorias;
     });
     _safeInit(() {
@@ -45,6 +53,20 @@ class FFAppState extends ChangeNotifier {
   set emailSignIn(String value) {
     _emailSignIn = value;
     prefs.setString('ff_emailSignIn', value);
+  }
+
+  String _phoneNumberSingIn = '';
+  String get phoneNumberSingIn => _phoneNumberSingIn;
+  set phoneNumberSingIn(String value) {
+    _phoneNumberSingIn = value;
+    prefs.setString('ff_phoneNumberSingIn', value);
+  }
+
+  String _displayNameSingIn = '';
+  String get displayNameSingIn => _displayNameSingIn;
+  set displayNameSingIn(String value) {
+    _displayNameSingIn = value;
+    prefs.setString('ff_displayNameSingIn', value);
   }
 
   bool _home = false;

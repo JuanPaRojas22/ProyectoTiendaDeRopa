@@ -6,6 +6,8 @@ import 'schema/user_record.dart';
 import 'schema/inventario_record.dart';
 import 'schema/carrito_record.dart';
 import 'schema/ordenes_record.dart';
+import 'schema/direcciones_record.dart';
+import 'schema/metodo_pago_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -18,6 +20,8 @@ export 'schema/user_record.dart';
 export 'schema/inventario_record.dart';
 export 'schema/carrito_record.dart';
 export 'schema/ordenes_record.dart';
+export 'schema/direcciones_record.dart';
+export 'schema/metodo_pago_record.dart';
 
 /// Functions to query UserRecords (as a Stream and as a Future).
 Future<int> queryUserRecordCount({
@@ -162,6 +166,80 @@ Future<List<OrdenesRecord>> queryOrdenesRecordOnce({
     queryCollectionOnce(
       OrdenesRecord.collection,
       OrdenesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query DireccionesRecords (as a Stream and as a Future).
+Future<int> queryDireccionesRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      DireccionesRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<DireccionesRecord>> queryDireccionesRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      DireccionesRecord.collection,
+      DireccionesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<DireccionesRecord>> queryDireccionesRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      DireccionesRecord.collection,
+      DireccionesRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query MetodoPagoRecords (as a Stream and as a Future).
+Future<int> queryMetodoPagoRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      MetodoPagoRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<MetodoPagoRecord>> queryMetodoPagoRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      MetodoPagoRecord.collection,
+      MetodoPagoRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<MetodoPagoRecord>> queryMetodoPagoRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      MetodoPagoRecord.collection,
+      MetodoPagoRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

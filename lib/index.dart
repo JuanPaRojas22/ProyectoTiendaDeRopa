@@ -1,5 +1,4 @@
 // Export pages
-export '/home_page/home_page_widget.dart' show HomePageWidget;
 export '/login/login/login_widget.dart' show LoginWidget;
 export '/login/splash/splash_widget.dart' show SplashWidget;
 export '/login/olvido_contrasena/olvido_contrasena_widget.dart'
@@ -29,3 +28,9 @@ export '/categoria/categoria_especifica_hombre/categoria_especifica_hombre_widge
     show CategoriaEspecificaHombreWidget;
 export '/categoria/categoria_especifica_mujer/categoria_especifica_mujer_widget.dart'
     show CategoriaEspecificaMujerWidget;
+export '/direcciones/direcciones_widget.dart' show DireccionesWidget;
+export '/ajustes_direcciones/ajustes_direcciones_widget.dart'
+    show AjustesDireccionesWidget;
+export '/metodos_pago/metodos_pago_widget.dart' show MetodosPagoWidget;
+export '/metodos_pago_ajustes/metodos_pago_ajustes_widget.dart'
+    show MetodosPagoAjustesWidget;

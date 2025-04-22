@@ -1,8 +1,9 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'home_page_widget.dart' show HomePageWidget;
+import '/index.dart';
+import 'metodos_pago_widget.dart' show MetodosPagoWidget;
 import 'package:flutter/material.dart';
 
-class HomePageModel extends FlutterFlowModel<HomePageWidget> {
+class MetodosPagoModel extends FlutterFlowModel<MetodosPagoWidget> {
   @override
   void initState(BuildContext context) {}
 
