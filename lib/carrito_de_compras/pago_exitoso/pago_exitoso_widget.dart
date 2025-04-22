@@ -56,7 +56,7 @@ class _PagoExitosoWidgetState extends State<PagoExitosoWidget> {
                   color: FlutterFlowTheme.of(context).accent1,
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: Color(0xFF1F2D84),
                     width: 2.0,
                   ),
                 ),
@@ -65,7 +65,7 @@ class _PagoExitosoWidgetState extends State<PagoExitosoWidget> {
                   padding: EdgeInsets.all(30.0),
                   child: Icon(
                     Icons.check_rounded,
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: Color(0xFF1F2D84),
                     size: 60.0,
                   ),
                 ),
@@ -83,7 +83,7 @@ class _PagoExitosoWidgetState extends State<PagoExitosoWidget> {
                               .displaySmall
                               .fontStyle,
                         ),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: Color(0xFF1F2D84),
                         letterSpacing: 0.0,
                         fontWeight: FlutterFlowTheme.of(context)
                             .displaySmall
@@ -147,7 +147,7 @@ class _PagoExitosoWidgetState extends State<PagoExitosoWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Color(0xFF1F2D84),
                       textStyle: FlutterFlowTheme.of(context)
                           .bodyLarge
                           .override(
@@ -198,7 +198,7 @@ class _PagoExitosoWidgetState extends State<PagoExitosoWidget> {
                               0.0, 0.0, 0.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          color: FlutterFlowTheme.of(context).tertiary,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
                                     font: GoogleFonts.inter(
@@ -209,7 +209,7 @@ class _PagoExitosoWidgetState extends State<PagoExitosoWidget> {
                                           .bodyLarge
                                           .fontStyle,
                                     ),
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: Colors.white,
                                     letterSpacing: 0.0,
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyLarge

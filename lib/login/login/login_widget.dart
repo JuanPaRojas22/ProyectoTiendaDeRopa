@@ -224,8 +224,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                     .displaySmall
                                                     .fontStyle,
                                           ),
-                                  indicatorColor:
-                                      FlutterFlowTheme.of(context).primary,
+                                  indicatorColor: Color(0xFF1F2D84),
                                   indicatorWeight: 4.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 12.0, 16.0, 12.0),
@@ -660,9 +659,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                     0.0,
                                                                     0.0),
                                                         color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primary,
+                                                            Color(0xFF1F2D84),
                                                         textStyle:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -748,9 +745,8 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                       0.0,
                                                                       0.0,
                                                                       0.0),
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
+                                                          color:
+                                                              Color(0xFF1F2D84),
                                                           textStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)

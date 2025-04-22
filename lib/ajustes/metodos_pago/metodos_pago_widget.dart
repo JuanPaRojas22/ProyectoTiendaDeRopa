@@ -46,14 +46,14 @@ class _MetodosPagoWidgetState extends State<MetodosPagoWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFD9D9D9),
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: Color(0xFF1F2D84),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
-          borderColor: FlutterFlowTheme.of(context).primary,
+          borderColor: Color(0xFF1F2D84),
           borderRadius: 0.0,
           borderWidth: 1.0,
           buttonSize: 60.0,
-          fillColor: FlutterFlowTheme.of(context).primary,
+          fillColor: Color(0xFF1F2D84),
           icon: Icon(
             Icons.arrow_back_rounded,
             color: FlutterFlowTheme.of(context).primaryBackground,
@@ -100,7 +100,9 @@ class _MetodosPagoWidgetState extends State<MetodosPagoWidget> {
           constraints: BoxConstraints(
             maxWidth: 570.0,
           ),
-          decoration: BoxDecoration(),
+          decoration: BoxDecoration(
+            color: Color(0xFFBBE1EA),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -282,7 +284,7 @@ class _MetodosPagoWidgetState extends State<MetodosPagoWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Color(0xFF1F2D84),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.plusJakartaSans(

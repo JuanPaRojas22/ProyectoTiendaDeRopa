@@ -59,7 +59,7 @@ class _AjustesDireccionesWidgetState extends State<AjustesDireccionesWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFD9D9D9),
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: Color(0xFF1F2D84),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -112,14 +112,16 @@ class _AjustesDireccionesWidgetState extends State<AjustesDireccionesWidget> {
           constraints: BoxConstraints(
             maxWidth: 570.0,
           ),
-          decoration: BoxDecoration(),
+          decoration: BoxDecoration(
+            color: Color(0xFFBBE1EA),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 30.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   child: TextFormField(
@@ -551,7 +553,7 @@ class _AjustesDireccionesWidgetState extends State<AjustesDireccionesWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Color(0xFF1F2D84),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.plusJakartaSans(

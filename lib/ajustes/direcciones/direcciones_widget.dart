@@ -46,7 +46,7 @@ class _DireccionesWidgetState extends State<DireccionesWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFD9D9D9),
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: Color(0xFF1F2D84),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -102,7 +102,9 @@ class _DireccionesWidgetState extends State<DireccionesWidget> {
           constraints: BoxConstraints(
             maxWidth: 570.0,
           ),
-          decoration: BoxDecoration(),
+          decoration: BoxDecoration(
+            color: Color(0xFFBBE1EA),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -263,8 +265,7 @@ class _DireccionesWidgetState extends State<DireccionesWidget> {
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          color: Color(0xFF1F2D84),
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
@@ -309,7 +310,7 @@ class _DireccionesWidgetState extends State<DireccionesWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Color(0xFF1F2D84),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.plusJakartaSans(

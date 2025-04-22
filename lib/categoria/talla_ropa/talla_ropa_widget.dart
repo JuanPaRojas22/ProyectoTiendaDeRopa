@@ -55,7 +55,7 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
           return Scaffold(
-            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+            backgroundColor: Color(0xFF1F2D84),
             body: Center(
               child: SizedBox(
                 width: 50.0,
@@ -79,7 +79,7 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
           },
           child: Scaffold(
             key: scaffoldKey,
-            backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+            backgroundColor: Color(0xFF1F2D84),
             body: SafeArea(
               top: true,
               child: Row(
@@ -91,7 +91,7 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
                       width: 100.0,
                       height: double.infinity,
                       decoration: BoxDecoration(
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: Color(0xFFBBE1EA),
                       ),
                       alignment: AlignmentDirectional(0.0, -1.0),
                       child: SingleChildScrollView(
@@ -299,10 +299,7 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
                                                 child: FlutterFlowIconButton(
                                                   borderRadius: 20.0,
                                                   buttonSize: 40.0,
-                                                  fillColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
+                                                  fillColor: Color(0xFF1F2D84),
                                                   icon: Icon(
                                                     Icons.remove,
                                                     color: FlutterFlowTheme.of(
@@ -371,10 +368,7 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
                                                 child: FlutterFlowIconButton(
                                                   borderRadius: 20.0,
                                                   buttonSize: 40.0,
-                                                  fillColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
+                                                  fillColor: Color(0xFF1F2D84),
                                                   icon: Icon(
                                                     Icons.add,
                                                     color: FlutterFlowTheme.of(
@@ -414,12 +408,15 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
                                         width: 344.9,
                                         height: 38.71,
                                         decoration: BoxDecoration(
-                                          color: Color(0xFFD7D7D7),
+                                          color: Colors.white,
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(20.0),
                                             bottomRight: Radius.circular(20.0),
                                             topLeft: Radius.circular(20.0),
                                             topRight: Radius.circular(20.0),
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.black,
                                           ),
                                         ),
                                         child: Padding(
@@ -571,8 +568,7 @@ class _TallaRopaWidgetState extends State<TallaRopaWidget> {
                                           iconPadding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 0.0),
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
+                                          color: Color(0xFF1F2D84),
                                           textStyle: FlutterFlowTheme.of(
                                                   context)
                                               .titleSmall

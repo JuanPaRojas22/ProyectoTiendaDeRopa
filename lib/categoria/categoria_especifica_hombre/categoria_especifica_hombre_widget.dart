@@ -60,7 +60,7 @@ class _CategoriaEspecificaHombreWidgetState
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: Color(0xFF1F2D84),
           automaticallyImplyLeading: false,
           title: Align(
             alignment: AlignmentDirectional(0.0, 0.0),

@@ -56,7 +56,7 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: Color(0xFF1F2D84),
           automaticallyImplyLeading: false,
           title: GradientText(
             'Carrito',
@@ -642,6 +642,7 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                                                     .displaySmall
                                                     .fontStyle,
                                           ),
+                                          color: Color(0xFF1F2D84),
                                           letterSpacing: 0.0,
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
@@ -690,7 +691,7 @@ class _CarritoListaWidgetState extends State<CarritoListaWidget> {
                                       16.0, 0.0, 16.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color: Color(0xFF1F2D84),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(

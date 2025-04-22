@@ -69,7 +69,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
           width: double.infinity,
           height: 270.0,
           decoration: BoxDecoration(
-            color: FlutterFlowTheme.of(context).secondaryBackground,
+            color: Color(0xFF1F2D84),
             boxShadow: [
               BoxShadow(
                 blurRadius: 5.0,
@@ -104,6 +104,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                                 .bodyMedium
                                 .fontStyle,
                           ),
+                          color: Colors.white,
                           fontSize: 20.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.bold,
@@ -165,7 +166,7 @@ class _DeleteWidgetState extends State<DeleteWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFFCDCDCD),
+                      color: Colors.white,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.lexendDeca(

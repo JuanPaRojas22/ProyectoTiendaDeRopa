@@ -59,14 +59,14 @@ class _MetodosPagoAjustesWidgetState extends State<MetodosPagoAjustesWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFD9D9D9),
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: Color(0xFF1F2D84),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
-          borderColor: FlutterFlowTheme.of(context).primary,
+          borderColor: Color(0xFF1F2D84),
           borderRadius: 30.0,
           borderWidth: 1.0,
           buttonSize: 60.0,
-          fillColor: FlutterFlowTheme.of(context).primary,
+          fillColor: Color(0xFF1F2D84),
           icon: Icon(
             Icons.arrow_back_rounded,
             color: FlutterFlowTheme.of(context).primaryBackground,
@@ -112,14 +112,16 @@ class _MetodosPagoAjustesWidgetState extends State<MetodosPagoAjustesWidget> {
           constraints: BoxConstraints(
             maxWidth: 570.0,
           ),
-          decoration: BoxDecoration(),
+          decoration: BoxDecoration(
+            color: Color(0xFFBBE1EA),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 40.0, 16.0, 0.0),
                 child: Container(
                   width: double.infinity,
                   child: TextFormField(
@@ -641,7 +643,7 @@ class _MetodosPagoAjustesWidgetState extends State<MetodosPagoAjustesWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Color(0xFF1F2D84),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 font: GoogleFonts.plusJakartaSans(

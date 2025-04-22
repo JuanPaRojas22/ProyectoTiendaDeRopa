@@ -78,7 +78,7 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
             appBar: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primary,
+              backgroundColor: Color(0xFF1F2D84),
               automaticallyImplyLeading: false,
               title: GradientText(
                 'Ingrese los datos',
@@ -554,6 +554,7 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
                                                         .displaySmall
                                                         .fontStyle,
                                               ),
+                                              color: Color(0xFF1F2D84),
                                               letterSpacing: 0.0,
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
@@ -628,8 +629,7 @@ class _TarjetaPagoWidgetState extends State<TarjetaPagoWidget> {
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: Color(0xFF1F2D84),
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(

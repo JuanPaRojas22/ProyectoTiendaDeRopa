@@ -53,16 +53,17 @@ class _OrdenDetallesWidgetState extends State<OrdenDetallesWidget> {
           automaticallyImplyLeading: false,
           title: GradientText(
             'Mis ordenes',
+            textAlign: TextAlign.start,
             style: FlutterFlowTheme.of(context).titleLarge.override(
                   font: GoogleFonts.outfit(
-                    fontWeight: FontWeight.w500,
+                    fontWeight: FontWeight.bold,
                     fontStyle:
                         FlutterFlowTheme.of(context).titleLarge.fontStyle,
                   ),
                   color: Color(0xFF14181B),
                   fontSize: 30.0,
                   letterSpacing: 0.0,
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.bold,
                   fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
                 ),
             colors: [

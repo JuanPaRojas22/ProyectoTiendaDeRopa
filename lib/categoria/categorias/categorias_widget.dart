@@ -56,7 +56,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
         key: scaffoldKey,
         backgroundColor: Color(0xFFD9D9D9),
         appBar: AppBar(
-          backgroundColor: Color(0xFFD9D9D9),
+          backgroundColor: Color(0xFF1F2D84),
           automaticallyImplyLeading: false,
           title: Text(
             'Nuestro catalogo ',
@@ -66,7 +66,7 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                     fontStyle:
                         FlutterFlowTheme.of(context).titleLarge.fontStyle,
                   ),
-                  color: Color(0xFF14181B),
+                  color: Colors.white,
                   fontSize: 30.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
@@ -105,10 +105,10 @@ class _CategoriasWidgetState extends State<CategoriasWidget>
                                     .fontStyle,
                               ),
                       unselectedLabelStyle: TextStyle(),
-                      labelColor: Color(0xFF4B39EF),
+                      labelColor: Color(0xFF1F2D84),
                       unselectedLabelColor: Color(0xFF57636C),
                       backgroundColor: Color(0x4C4B39EF),
-                      borderColor: Color(0xFF4B39EF),
+                      borderColor: FlutterFlowTheme.of(context).primary,
                       borderWidth: 2.0,
                       borderRadius: 12.0,
                       elevation: 0.0,

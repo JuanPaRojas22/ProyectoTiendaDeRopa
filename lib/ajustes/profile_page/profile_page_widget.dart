@@ -49,7 +49,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: Color(0xFF1F2D84),
           automaticallyImplyLeading: true,
           title: Text(
             'Perfil',
@@ -104,18 +104,14 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             font: GoogleFonts.inter(
-                              fontWeight: FlutterFlowTheme.of(context)
-                                  .bodyLarge
-                                  .fontWeight,
+                              fontWeight: FontWeight.bold,
                               fontStyle: FlutterFlowTheme.of(context)
                                   .bodyLarge
                                   .fontStyle,
                             ),
-                            color: FlutterFlowTheme.of(context).secondaryText,
+                            color: Color(0xFF1F2D84),
                             letterSpacing: 0.0,
-                            fontWeight: FlutterFlowTheme.of(context)
-                                .bodyLarge
-                                .fontWeight,
+                            fontWeight: FontWeight.bold,
                             fontStyle: FlutterFlowTheme.of(context)
                                 .bodyLarge
                                 .fontStyle,
@@ -163,8 +159,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                             .titleMedium
                                             .fontStyle,
                                       ),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
+                                      color: Color(0xFF1F2D84),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
@@ -193,6 +188,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
+                                          color: Color(0xFF1F2D84),
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
@@ -254,6 +250,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                                     .bodyMedium
                                                     .fontStyle,
                                           ),
+                                          color: Color(0xFF1F2D84),
                                           letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
@@ -340,8 +337,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                             .titleMedium
                                             .fontStyle,
                                       ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: Color(0xFF1F2D84),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
@@ -397,8 +393,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                             .titleMedium
                                             .fontStyle,
                                       ),
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
+                                      color: Color(0xFF1F2D84),
                                       letterSpacing: 0.0,
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
