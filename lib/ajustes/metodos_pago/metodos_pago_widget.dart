@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'metodos_pago_model.dart';
 export 'metodos_pago_model.dart';
 
@@ -44,21 +46,48 @@ class _MetodosPagoWidgetState extends State<MetodosPagoWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFD9D9D9),
       appBar: AppBar(
-        backgroundColor: Color(0xFFD9D9D9),
+        backgroundColor: FlutterFlowTheme.of(context).primary,
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30.0,
+          borderColor: FlutterFlowTheme.of(context).primary,
+          borderRadius: 0.0,
           borderWidth: 1.0,
           buttonSize: 60.0,
+          fillColor: FlutterFlowTheme.of(context).primary,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: Color(0xFF15161E),
+            color: FlutterFlowTheme.of(context).primaryBackground,
             size: 30.0,
           ),
           onPressed: () async {
             context.safePop();
           },
+        ),
+        title: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
+          child: GradientText(
+            'Tus metodos de pago',
+            textAlign: TextAlign.center,
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  font: GoogleFonts.outfit(
+                    fontWeight: FontWeight.w500,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                  ),
+                  color: Color(0xFF15161E),
+                  fontSize: 24.0,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.w500,
+                  fontStyle:
+                      FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                ),
+            colors: [
+              FlutterFlowTheme.of(context).primaryBackground,
+              FlutterFlowTheme.of(context).primaryBackground
+            ],
+            gradientDirection: GradientDirection.ltr,
+            gradientType: GradientType.linear,
+          ),
         ),
         actions: [],
         centerTitle: false,
@@ -77,20 +106,6 @@ class _MetodosPagoWidgetState extends State<MetodosPagoWidget> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
-                child: Text(
-                  'Tus metodos de pago',
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Outfit',
-                        color: Color(0xFF15161E),
-                        fontSize: 24.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                ),
-              ),
               StreamBuilder<List<MetodoPagoRecord>>(
                 stream: queryMetodoPagoRecord(),
                 builder: (context, snapshot) {
@@ -167,8 +182,29 @@ class _MetodosPagoWidgetState extends State<MetodosPagoWidget> {
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
                                                 .override(
-                                                  fontFamily: 'Inter Tight',
+                                                  font: GoogleFonts.interTight(
+                                                    fontWeight:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleLarge
+                                                            .fontWeight,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .titleLarge
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleLarge
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleLarge
+                                                          .fontStyle,
                                                 ),
                                           ),
                                         ),
@@ -178,8 +214,27 @@ class _MetodosPagoWidgetState extends State<MetodosPagoWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
-                                                fontFamily: 'Inter',
+                                                font: GoogleFonts.inter(
+                                                  fontWeight:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontWeight,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium
+                                                          .fontStyle,
+                                                ),
                                                 letterSpacing: 0.0,
+                                                fontWeight:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontWeight,
+                                                fontStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .fontStyle,
                                               ),
                                         ),
                                       ],
@@ -227,14 +282,22 @@ class _MetodosPagoWidgetState extends State<MetodosPagoWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).secondary,
+                      color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Plus Jakarta Sans',
+                                font: GoogleFonts.plusJakartaSans(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
                                 color: Colors.white,
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(

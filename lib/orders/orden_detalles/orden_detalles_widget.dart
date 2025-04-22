@@ -3,6 +3,8 @@ import '/componentes/navbar/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'orden_detalles_model.dart';
 export 'orden_detalles_model.dart';
 
@@ -47,17 +49,28 @@ class _OrdenDetallesWidgetState extends State<OrdenDetallesWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+          backgroundColor: Color(0xFF1F2D84),
           automaticallyImplyLeading: false,
-          title: Text(
+          title: GradientText(
             'Mis ordenes',
             style: FlutterFlowTheme.of(context).titleLarge.override(
-                  fontFamily: 'Outfit',
+                  font: GoogleFonts.outfit(
+                    fontWeight: FontWeight.w500,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                  ),
                   color: Color(0xFF14181B),
                   fontSize: 30.0,
                   letterSpacing: 0.0,
                   fontWeight: FontWeight.w500,
+                  fontStyle: FlutterFlowTheme.of(context).titleLarge.fontStyle,
                 ),
+            colors: [
+              FlutterFlowTheme.of(context).primaryBackground,
+              FlutterFlowTheme.of(context).primaryBackground
+            ],
+            gradientDirection: GradientDirection.rtl,
+            gradientType: GradientType.linear,
           ),
           actions: [],
           centerTitle: false,
@@ -165,9 +178,30 @@ class _OrdenDetallesWidgetState extends State<OrdenDetallesWidget> {
                                                             context)
                                                         .titleLarge
                                                         .override(
-                                                          fontFamily:
-                                                              'Inter Tight',
+                                                          font: GoogleFonts
+                                                              .interTight(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLarge
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .titleLarge
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleLarge
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleLarge
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -177,8 +211,29 @@ class _OrdenDetallesWidgetState extends State<OrdenDetallesWidget> {
                                                           context)
                                                       .labelMedium
                                                       .override(
-                                                        fontFamily: 'Inter',
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
+                                                        ),
                                                         letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
                                                       ),
                                                 ),
                                                 Padding(
@@ -199,10 +254,24 @@ class _OrdenDetallesWidgetState extends State<OrdenDetallesWidget> {
                                                             context)
                                                         .labelMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
                                                           fontWeight:
                                                               FontWeight.bold,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .labelMedium
+                                                                  .fontStyle,
                                                         ),
                                                   ),
                                                 ),
@@ -222,7 +291,7 @@ class _OrdenDetallesWidgetState extends State<OrdenDetallesWidget> {
                     ),
                     Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 170.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 240.0, 0.0, 0.0),
                       child: wrapWithModel(
                         model: _model.navbarModel,
                         updateCallback: () => safeSetState(() {}),

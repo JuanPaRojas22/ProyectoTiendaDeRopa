@@ -4,6 +4,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'olvido_contrasena_model.dart';
 export 'olvido_contrasena_model.dart';
 
@@ -46,7 +48,7 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
       key: scaffoldKey,
       backgroundColor: Color(0xFFD9D9D9),
       appBar: AppBar(
-        backgroundColor: Color(0xFFD9D9D9),
+        backgroundColor: Color(0xFF1F2D84),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -55,12 +57,37 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
           buttonSize: 60.0,
           icon: Icon(
             Icons.arrow_back_rounded,
-            color: Color(0xFF15161E),
+            color: FlutterFlowTheme.of(context).primaryBackground,
             size: 30.0,
           ),
           onPressed: () async {
             context.safePop();
           },
+        ),
+        title: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
+          child: GradientText(
+            'Forgot Password',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  font: GoogleFonts.outfit(
+                    fontWeight: FontWeight.w500,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                  ),
+                  color: Color(0xFF15161E),
+                  fontSize: 24.0,
+                  letterSpacing: 0.0,
+                  fontWeight: FontWeight.w500,
+                  fontStyle:
+                      FlutterFlowTheme.of(context).headlineMedium.fontStyle,
+                ),
+            colors: [
+              FlutterFlowTheme.of(context).primaryBackground,
+              FlutterFlowTheme.of(context).primaryBackground
+            ],
+            gradientDirection: GradientDirection.ltr,
+            gradientType: GradientType.linear,
+          ),
         ),
         actions: [],
         centerTitle: false,
@@ -73,7 +100,9 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
           constraints: BoxConstraints(
             maxWidth: 570.0,
           ),
-          decoration: BoxDecoration(),
+          decoration: BoxDecoration(
+            color: Color(0xFFBBE1EA),
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,28 +140,22 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
                   ),
                 ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                child: Text(
-                  'Forgot Password',
-                  style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Outfit',
-                        color: Color(0xFF15161E),
-                        fontSize: 24.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                      ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(16.0, 8.0, 16.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 16.0, 16.0),
                 child: Text(
                   'Se le enviará un correo con un link para restablecer su contraseña, por favor ingrese el correo electronico asociado a su cuenta. ',
                   style: FlutterFlowTheme.of(context).labelMedium.override(
-                        fontFamily: 'Plus Jakarta Sans',
-                        color: Color(0xFF606A85),
+                        font: GoogleFonts.plusJakartaSans(
+                          fontWeight: FontWeight.w500,
+                          fontStyle: FlutterFlowTheme.of(context)
+                              .labelMedium
+                              .fontStyle,
+                        ),
+                        color: Colors.black,
                         fontSize: 14.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w500,
+                        fontStyle:
+                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
                       ),
                 ),
               ),
@@ -148,20 +171,36 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
                     decoration: InputDecoration(
                       labelStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
+                                font: GoogleFonts.plusJakartaSans(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
+                                ),
                                 color: Color(0xFF606A85),
                                 fontSize: 14.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .fontStyle,
                               ),
                       hintText: 'Ingresa tu correo..',
                       hintStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
-                                fontFamily: 'Plus Jakarta Sans',
+                                font: GoogleFonts.plusJakartaSans(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .fontStyle,
+                                ),
                                 color: Color(0xFF606A85),
                                 fontSize: 14.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .fontStyle,
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
@@ -197,11 +236,18 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
                           24.0, 24.0, 20.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Plus Jakarta Sans',
+                          font: GoogleFonts.plusJakartaSans(
+                            fontWeight: FontWeight.w500,
+                            fontStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .fontStyle,
+                          ),
                           color: Color(0xFF15161E),
                           fontSize: 14.0,
                           letterSpacing: 0.0,
                           fontWeight: FontWeight.w500,
+                          fontStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.fontStyle,
                         ),
                     maxLines: null,
                     keyboardType: TextInputType.emailAddress,
@@ -229,14 +275,22 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFF6F61EF),
+                      color: Color(0xFF1F2D84),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Plus Jakarta Sans',
+                                font: GoogleFonts.plusJakartaSans(
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .fontStyle,
+                                ),
                                 color: Colors.white,
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .fontStyle,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(

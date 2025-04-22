@@ -4,7 +4,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'categoria_especifica_mujer_model.dart';
 export 'categoria_especifica_mujer_model.dart';
 
@@ -58,8 +60,34 @@ class _CategoriaEspecificaMujerWidgetState
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
+          title: Align(
+            alignment: AlignmentDirectional(0.0, 0.0),
+            child: GradientText(
+              '${FFAppState().categorias} para mujer',
+              textAlign: TextAlign.center,
+              style: FlutterFlowTheme.of(context).titleLarge.override(
+                    font: GoogleFonts.outfit(
+                      fontWeight: FontWeight.w500,
+                      fontStyle:
+                          FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                    ),
+                    color: Color(0xFF14181B),
+                    fontSize: 30.0,
+                    letterSpacing: 0.0,
+                    fontWeight: FontWeight.w500,
+                    fontStyle:
+                        FlutterFlowTheme.of(context).titleLarge.fontStyle,
+                  ),
+              colors: [
+                FlutterFlowTheme.of(context).primaryBackground,
+                FlutterFlowTheme.of(context).secondaryBackground
+              ],
+              gradientDirection: GradientDirection.ltr,
+              gradientType: GradientType.linear,
+            ),
+          ),
           actions: [],
           centerTitle: false,
           elevation: 0.0,
@@ -67,27 +95,6 @@ class _CategoriaEspecificaMujerWidgetState
         body: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: Text(
-                    '${FFAppState().categorias} para mujer',
-                    textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily: 'Outfit',
-                          color: Color(0xFF14181B),
-                          fontSize: 30.0,
-                          letterSpacing: 0.0,
-                          fontWeight: FontWeight.w500,
-                        ),
-                  ),
-                ),
-              ],
-            ),
             Container(
               width: double.infinity,
               height: 300.0,
@@ -194,17 +201,48 @@ class _CategoriaEspecificaMujerWidgetState
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Flexible(
-                                              child: Text(
+                                              child: GradientText(
                                                 listViewInventarioRecord
                                                     .nombreInventario,
-                                                maxLines: 2,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily: 'Inter',
+                                                          font:
+                                                              GoogleFonts.inter(
+                                                            fontWeight:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontWeight,
+                                                            fontStyle:
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .fontStyle,
+                                                          ),
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontWeight,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyMedium
+                                                                  .fontStyle,
                                                         ),
+                                                colors: [
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText
+                                                ],
+                                                gradientDirection:
+                                                    GradientDirection.ltr,
+                                                gradientType:
+                                                    GradientType.linear,
                                               ),
                                             ),
                                           ],
@@ -212,7 +250,7 @@ class _CategoriaEspecificaMujerWidgetState
                                         Align(
                                           alignment:
                                               AlignmentDirectional(-1.0, 0.0),
-                                          child: Text(
+                                          child: GradientText(
                                             formatNumber(
                                               listViewInventarioRecord
                                                   .precioInventario,
@@ -224,10 +262,31 @@ class _CategoriaEspecificaMujerWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
-                                                  fontFamily: 'Inter',
+                                                  font: GoogleFonts.inter(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium
+                                                            .fontStyle,
+                                                  ),
                                                   letterSpacing: 0.0,
                                                   fontWeight: FontWeight.bold,
+                                                  fontStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .bodyMedium
+                                                          .fontStyle,
                                                 ),
+                                            colors: [
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText,
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText
+                                            ],
+                                            gradientDirection:
+                                                GradientDirection.ltr,
+                                            gradientType: GradientType.linear,
                                           ),
                                         ),
                                       ],
@@ -245,7 +304,7 @@ class _CategoriaEspecificaMujerWidgetState
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 360.0, 0.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 460.0, 0.0, 1.0),
               child: wrapWithModel(
                 model: _model.navbarModel,
                 updateCallback: () => safeSetState(() {}),
