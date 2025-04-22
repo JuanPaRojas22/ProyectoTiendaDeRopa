@@ -1,5 +1,5 @@
 import '/backend/backend.dart';
-import '/components/navbar_widget.dart';
+import '/componentes/navbar/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
@@ -133,8 +133,8 @@ class _CategoriaEspecificaHombreWidgetState
                       final listViewInventarioRecord =
                           listViewInventarioRecordList[listViewIndex];
                       return Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            15.0, 0.0, 15.0, 0.0),
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 1.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -193,16 +193,19 @@ class _CategoriaEspecificaHombreWidgetState
                                         Row(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Text(
-                                              listViewInventarioRecord
-                                                  .nombreInventario,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Inter',
-                                                        letterSpacing: 0.0,
-                                                      ),
+                                            Flexible(
+                                              child: Text(
+                                                listViewInventarioRecord
+                                                    .nombreInventario,
+                                                maxLines: 5,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Inter',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                              ),
                                             ),
                                           ],
                                         ),

@@ -1,9 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import '/index.dart';
-import 'carrito_vacio_widget.dart' show CarritoVacioWidget;
+import 'delete_widget.dart' show DeleteWidget;
 import 'package:flutter/material.dart';
 
-class CarritoVacioModel extends FlutterFlowModel<CarritoVacioWidget> {
+class DeleteModel extends FlutterFlowModel<DeleteWidget> {
   @override
   void initState(BuildContext context) {}
 

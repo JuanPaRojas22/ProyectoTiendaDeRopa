@@ -6,31 +6,24 @@ export '/login/olvido_contrasena/olvido_contrasena_widget.dart'
 export '/login/olvido_contrasena_mensaje/olvido_contrasena_mensaje_widget.dart'
     show OlvidoContrasenaMensajeWidget;
 export '/categoria/categorias/categorias_widget.dart' show CategoriasWidget;
-export '/orders/ordenes/ordenes_widget.dart' show OrdenesWidget;
 export '/orders/orden_detalles/orden_detalles_widget.dart'
     show OrdenDetallesWidget;
-export '/orders/orden_estado/orden_estado_widget.dart' show OrdenEstadoWidget;
-export '/categoria/no_encontro_categoria_buscar/no_encontro_categoria_buscar_widget.dart'
-    show NoEncontroCategoriaBuscarWidget;
-export '/carrito_de_compras/carrito_vacio/carrito_vacio_widget.dart'
-    show CarritoVacioWidget;
 export '/carrito_de_compras/carrito_lista/carrito_lista_widget.dart'
     show CarritoListaWidget;
-export '/carrito_de_compras/talla_ropa/talla_ropa_widget.dart'
-    show TallaRopaWidget;
+export '/categoria/talla_ropa/talla_ropa_widget.dart' show TallaRopaWidget;
 export '/carrito_de_compras/pago_exitoso/pago_exitoso_widget.dart'
     show PagoExitosoWidget;
 export '/carrito_de_compras/tarjeta_pago/tarjeta_pago_widget.dart'
     show TarjetaPagoWidget;
 export '/login/registro/registro_widget.dart' show RegistroWidget;
-export '/profile_page/profile_page_widget.dart' show ProfilePageWidget;
+export '/ajustes/profile_page/profile_page_widget.dart' show ProfilePageWidget;
 export '/categoria/categoria_especifica_hombre/categoria_especifica_hombre_widget.dart'
     show CategoriaEspecificaHombreWidget;
 export '/categoria/categoria_especifica_mujer/categoria_especifica_mujer_widget.dart'
     show CategoriaEspecificaMujerWidget;
-export '/direcciones/direcciones_widget.dart' show DireccionesWidget;
-export '/ajustes_direcciones/ajustes_direcciones_widget.dart'
+export '/ajustes/direcciones/direcciones_widget.dart' show DireccionesWidget;
+export '/ajustes/ajustes_direcciones/ajustes_direcciones_widget.dart'
     show AjustesDireccionesWidget;
-export '/metodos_pago/metodos_pago_widget.dart' show MetodosPagoWidget;
-export '/metodos_pago_ajustes/metodos_pago_ajustes_widget.dart'
+export '/ajustes/metodos_pago/metodos_pago_widget.dart' show MetodosPagoWidget;
+export '/ajustes/metodos_pago_ajustes/metodos_pago_ajustes_widget.dart'
     show MetodosPagoAjustesWidget;

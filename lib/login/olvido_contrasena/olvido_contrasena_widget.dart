@@ -146,7 +146,6 @@ class _OlvidoContrasenaWidgetState extends State<OlvidoContrasenaWidget> {
                     autofillHints: [AutofillHints.email],
                     obscureText: false,
                     decoration: InputDecoration(
-                      labelText: 'Tu correo electrónico...',
                       labelStyle:
                           FlutterFlowTheme.of(context).labelMedium.override(
                                 fontFamily: 'Plus Jakarta Sans',

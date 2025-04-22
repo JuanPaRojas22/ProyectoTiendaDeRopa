@@ -110,29 +110,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => CategoriasWidget(),
         ),
         FFRoute(
-          name: OrdenesWidget.routeName,
-          path: OrdenesWidget.routePath,
-          builder: (context, params) => OrdenesWidget(),
-        ),
-        FFRoute(
           name: OrdenDetallesWidget.routeName,
           path: OrdenDetallesWidget.routePath,
           builder: (context, params) => OrdenDetallesWidget(),
-        ),
-        FFRoute(
-          name: OrdenEstadoWidget.routeName,
-          path: OrdenEstadoWidget.routePath,
-          builder: (context, params) => OrdenEstadoWidget(),
-        ),
-        FFRoute(
-          name: NoEncontroCategoriaBuscarWidget.routeName,
-          path: NoEncontroCategoriaBuscarWidget.routePath,
-          builder: (context, params) => NoEncontroCategoriaBuscarWidget(),
-        ),
-        FFRoute(
-          name: CarritoVacioWidget.routeName,
-          path: CarritoVacioWidget.routePath,
-          builder: (context, params) => CarritoVacioWidget(),
         ),
         FFRoute(
           name: CarritoListaWidget.routeName,

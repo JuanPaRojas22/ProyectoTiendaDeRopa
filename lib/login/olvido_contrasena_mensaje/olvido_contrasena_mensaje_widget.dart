@@ -115,7 +115,7 @@ class _OlvidoContrasenaMensajeWidgetState
                         onPressed: () async {
                           context.pushNamed(LoginWidget.routeName);
                         },
-                        text: 'Volver a pagina de inicio',
+                        text: 'Volver al inicio de sesion',
                         options: FFButtonOptions(
                           width: 300.0,
                           height: 50.0,

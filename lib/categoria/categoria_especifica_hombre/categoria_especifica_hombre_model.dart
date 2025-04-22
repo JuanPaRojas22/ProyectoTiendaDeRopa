@@ -1,4 +1,4 @@
-import '/components/navbar_widget.dart';
+import '/componentes/navbar/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/index.dart';
 import 'categoria_especifica_hombre_widget.dart'

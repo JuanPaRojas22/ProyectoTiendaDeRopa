@@ -1,9 +1,10 @@
-import '/components/navbar_widget.dart';
+import '/componentes/navbar/navbar_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'orden_estado_widget.dart' show OrdenEstadoWidget;
+import '/index.dart';
+import 'profile_page_widget.dart' show ProfilePageWidget;
 import 'package:flutter/material.dart';
 
-class OrdenEstadoModel extends FlutterFlowModel<OrdenEstadoWidget> {
+class ProfilePageModel extends FlutterFlowModel<ProfilePageWidget> {
   ///  State fields for stateful widgets in this page.
 
   // Model for NAVBAR component.

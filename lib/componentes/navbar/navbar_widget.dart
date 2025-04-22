@@ -91,7 +91,7 @@ class _NavbarWidgetState extends State<NavbarWidget> {
                 safeSetState(() {});
 
                 context.pushNamed(
-                  OrdenesWidget.routeName,
+                  OrdenDetallesWidget.routeName,
                   extra: <String, dynamic>{
                     kTransitionInfoKey: TransitionInfo(
                       hasTransition: true,
